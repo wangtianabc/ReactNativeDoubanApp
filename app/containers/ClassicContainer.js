@@ -12,7 +12,7 @@ class ClassicContainer extends React.Component {
     }
 
     render() {
-        return <Text>List of all movies</Text>
+        return <Text>List of all classical</Text>
     }
 }
 
