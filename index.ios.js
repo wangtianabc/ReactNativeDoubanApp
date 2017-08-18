@@ -3,7 +3,7 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-import { AppRegistry } from 'react-native';
-import Root from './app/root';
+import { AppRegistry } from 'react-native'
+import Root from './app/root'
 
-AppRegistry.registerComponent('ReactNativeDoubanApp', () => Root);
+AppRegistry.registerComponent('ReactNativeDoubanApp', () => Root)
