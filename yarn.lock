@@ -2638,6 +2638,10 @@ lodash.keys@^3.0.0:
     lodash.isarguments "^3.0.0"
     lodash.isarray "^3.0.0"
 
+lodash.merge@4.6.0:
+  version "4.6.0"
+  resolved "http://registry.npm.taobao.org/lodash.merge/download/lodash.merge-4.6.0.tgz#69884ba144ac33fe699737a6086deffadd0f89c5"
+
 lodash.pad@^4.1.0:
   version "4.5.1"
   resolved "http://registry.npm.taobao.org/lodash.pad/download/lodash.pad-4.5.1.tgz#4330949a833a7c8da22cc20f6a26c4d59debba70"
@@ -3358,6 +3362,12 @@ react-native-drawer-layout@1.3.2:
   dependencies:
     react-native-dismiss-keyboard "1.0.0"
 
+react-native-simple-store@^1.3.0:
+  version "1.3.0"
+  resolved "http://registry.npm.taobao.org/react-native-simple-store/download/react-native-simple-store-1.3.0.tgz#84953a7b007b8e3c50ec768478e98dc3636ef092"
+  dependencies:
+    lodash.merge "4.6.0"
+
 react-native-tab-view@^0.0.65:
   version "0.0.65"
   resolved "http://registry.npm.taobao.org/react-native-tab-view/download/react-native-tab-view-0.0.65.tgz#b685ea3081ff7c96486cd997361026c407302c59"
@@ -3577,6 +3587,10 @@ redux-logger@^3.0.6:
   resolved "http://registry.npm.taobao.org/redux-logger/download/redux-logger-3.0.6.tgz#f7555966f3098f3c88604c449cf0baf5778274bf"
   dependencies:
     deep-diff "^0.3.5"
+
+redux-saga@^0.15.6:
+  version "0.15.6"
+  resolved "http://registry.npm.taobao.org/redux-saga/download/redux-saga-0.15.6.tgz#8638dc522de6c6c0a496fe8b2b5466287ac2dc4d"
 
 redux@^3.7.2:
   version "3.7.2"

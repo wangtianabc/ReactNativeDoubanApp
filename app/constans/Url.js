@@ -1,0 +1,1 @@
+export const Douban_Url = 'http://api.douban.com/v2'
