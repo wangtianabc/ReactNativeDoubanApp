@@ -1,5 +1,6 @@
 # ReactNativeDoubanApp
 DoubanApp （开发中。。。）
+同时适配: ios android
 
 利用豆瓣API V2练习开发
 
