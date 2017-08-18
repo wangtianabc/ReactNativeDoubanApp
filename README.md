@@ -1,5 +1,5 @@
 # ReactNativeDoubanApp
-DoubanApp
+DoubanApp （开发中。。。）
 
 利用豆瓣API V2练习开发
 
