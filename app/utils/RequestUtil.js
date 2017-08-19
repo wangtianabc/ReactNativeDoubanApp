@@ -1,13 +1,7 @@
 export const Request = (url, method, body) => {
     let isOk = false
     return new Promise((resolve, reject) => {
-        fetch(url, {
-            method,
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            },
-            body
-        }).then((response) => {
+        fetch(url).then((response) => {
             if (response.ok) {
                 isOk = true
             } else {

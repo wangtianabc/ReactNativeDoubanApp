@@ -6,13 +6,13 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 class ClassicContainer extends React.Component {
     static navigationOptions = {
-        title: '经典',
+        title: '音乐',
         tabBarIcon: ({ tintColor }) =>
-        <Icon name="md-film" size={25} color={tintColor} />
+        <Icon name="md-musical-notes" size={25} color={tintColor} />
     }
 
     render() {
-        return <Text>Top 250</Text>
+        return <Text>music</Text>
     }
 }
 

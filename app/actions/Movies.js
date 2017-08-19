@@ -1,8 +1,12 @@
 import * as types from '../constans/ActionTypes'
 
-export function requestHotMovieList() {
+export function requestHotMovieList(isRefreshing, loading, isLoadMore, subUrl = '') {
     return {
-        type: types.REQUEST_HOT_MOVIE_LIST
+        type: types.REQUEST_HOT_MOVIE_LIST,
+        isRefreshing,
+        loading,
+        isLoadMore,
+        subUrl
     }
 }
 
