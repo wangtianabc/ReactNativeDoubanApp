@@ -20,7 +20,7 @@ const movieReducer = (state=initState, action) => {
                 ...state,
                 isRefreshing: false,
                 isLoadMore: false,
-                movies: action.movies
+                movies: action.hotMovieList
             }
         default:
             return state

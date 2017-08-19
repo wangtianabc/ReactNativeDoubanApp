@@ -1,13 +1,14 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import {
     Text
 } from 'react-native'
 
+/** Accessing React.PropTypes is no longer supported and will be removed completely in React 16.
 const propTypes = {
     movieAction: PropTypes.object,
-    movies: PropTypes.object
+    movies: PropTypes.array
 }
-
+*/
 class Main extends React.Component {
     constructor(props) {
         super(props)
@@ -15,8 +16,8 @@ class Main extends React.Component {
 
     componentDidMount() {
         const { movieAction } = this.props
-        console.log(this.props)
         movieAction.requestHotMovieList(false, false, false, '/movie/in_theaters')
+        console.log(this.props.movies)
     }
 
     render() {
@@ -24,6 +25,6 @@ class Main extends React.Component {
     }
 }
 
-Main.propTypes = propTypes
+// Main.propTypes = propTypes
 
 export default Main

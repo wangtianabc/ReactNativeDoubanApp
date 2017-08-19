@@ -15,11 +15,11 @@ export function* requestHotMovieList (isRefreshing, loading, isLoadMore, subUrl)
             'get'
         )
 
-        yield  put(receiveHotMovieList(hotMovieList))
-
         const errorMessage = hotMovieList.msg
         if (errorMessage && errorMessage !=='') {
             yield Msg.showShort(errorMessage)
+        } else {
+            yield  put(receiveHotMovieList(hotMovieList.subjects))
         }
     } catch (error) {
 

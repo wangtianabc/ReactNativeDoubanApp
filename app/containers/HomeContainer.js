@@ -19,7 +19,7 @@ class HomeContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    const { movies } = state
+    const { movies } = state.movie
     return {
         movies
     }
