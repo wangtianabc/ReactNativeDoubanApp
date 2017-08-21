@@ -4,16 +4,16 @@ import {
     View
 } from 'react-native'
 
-class CommingList extends React.Component {
+class Top250 extends React.Component {
 
 
     render() {
         return (
             <View>
-                <Text>comming list</Text>
+                <Text>USA List</Text>
             </View>
         )
     }
 }
 
-export default CommingList
+export default Top250

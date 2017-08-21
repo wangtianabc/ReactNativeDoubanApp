@@ -3380,6 +3380,10 @@ react-native-tab-view@^0.0.65:
   dependencies:
     prop-types "^15.5.8"
 
+react-native-timeago@^0.3.0:
+  version "0.3.0"
+  resolved "http://registry.npm.taobao.org/react-native-timeago/download/react-native-timeago-0.3.0.tgz#dc076c1a2fc3935f62cb3e2f327f95aeec233d24"
+
 react-native-vector-icons@^4.3.0:
   version "4.3.0"
   resolved "http://registry.npm.taobao.org/react-native-vector-icons/download/react-native-vector-icons-4.3.0.tgz#49eab845fbcde6354cb3dbcb62c1abd1f6abc866"

@@ -8,7 +8,7 @@ import {
 
 const LoadingView = () => (
     <View style={styles.loading}>
-        <ActivityIndicator size="large" color="#3e9ce9"/>
+        <ActivityIndicator size="small" color="#3e9ce9"/>
         <Text style={styles.loadingText}>数据加载中...</Text>
     </View>
 )

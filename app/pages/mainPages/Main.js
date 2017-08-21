@@ -10,6 +10,8 @@ import {
 } from 'react-native'
 import HotList from './HotList'
 import CommingList from './CommingList'
+import USAList from './USAList'
+import Top250 from './Top250'
 
 /** Accessing React.PropTypes is no longer supported and will be removed completely in React 16.
 const propTypes = {
@@ -44,6 +46,12 @@ class Main extends React.Component {
                     </ScrollView>
                     <ScrollView tabLabel='即将上映'>
                         <CommingList/>
+                    </ScrollView>
+                    <ScrollView tabLabel='北美票房'>
+                        <USAList/>
+                    </ScrollView>
+                    <ScrollView tabLabel='TOP250'>
+                        <Top250/>
                     </ScrollView>
                 </ScrollableTabView>
             </View>
