@@ -19,9 +19,11 @@ export function fetchHotMovieList(isRefreshing, loading, isLoadMore = false) {
     }
 }
 
-export function receiveHotMovieList(hotMovieList) {
+export function receiveHotMovieList(isRefreshing, loading, hotMovieList) {
     return {
         type: types.RECEIVE_HOT_MOVIE_LIST,
+        isRefreshing,
+        loading,
         hotMovieList
     }
 }

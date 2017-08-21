@@ -19,11 +19,10 @@ export function* requestHotMovieList (isRefreshing, loading, isLoadMore, subUrl)
         if (errorMessage && errorMessage !=='') {
             yield Msg.showShort(errorMessage)
         } else {
-            yield  put(receiveHotMovieList(hotMovieList.subjects))
+            yield  put(receiveHotMovieList(false, false,  hotMovieList.subjects))
         }
     } catch (error) {
-
-        yield put(receiveHotMovieList([]))
+        yield put(receiveHotMovieList(false, false, []))
         Msg.showShort('未取到数据，请重试')
     }
 }

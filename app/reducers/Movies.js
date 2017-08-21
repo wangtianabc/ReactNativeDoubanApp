@@ -18,8 +18,8 @@ const movieReducer = (state=initState, action) => {
         case types.RECEIVE_HOT_MOVIE_LIST:
             return {
                 ...state,
-                isRefreshing: false,
-                isLoadMore: false,
+                isRefreshing: action.isRefreshing,
+                loading: action.loading,
                 movies: action.hotMovieList
             }
         default:
