@@ -21,8 +21,8 @@ const HotItemCell = ({ item, onPressHandler }) => (
             <Text style={styles.sawFont}>{item.collect_count}人看过</Text>
         </View>
         <View style={{flex: 0}}>
-            <TouchableOpacity onPress={() => alert('付钱！')}>
-                <Text style={{color: '#FF4E65', fontWeight: '900'}}>购票</Text>
+            <TouchableOpacity onPress={() => alert('付钱:'+item.id)}>
+                <Text style={{color: '#FF6100', fontWeight: '900'}}>购票</Text>
             </TouchableOpacity>
         </View>
     </TouchableOpacity>
