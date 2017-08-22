@@ -11,4 +11,4 @@ DoubanApp （开发中。。。）
 3. react-native run-ios
 
 技术栈：react-native+react-navigation+redux+react-redux+sagas
-![image](https://github.com/wangtianabc/ReactNativeDoubanApp/tree/master/screen/android.png)
+https://github.com/wangtianabc/ReactNativeDoubanApp/tree/master/screen/android.png
