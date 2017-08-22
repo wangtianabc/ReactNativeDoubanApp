@@ -16,6 +16,12 @@ const MainScreenNavigator = TabNavigator(
                 tabBarIcon: ({tintColor}) => (
                     <Icon name="md-film" size={25} color={tintColor}/>
                 ),
+                headerRight: (
+                    <Icon.Button
+                        name="md-search"
+                        backgroundColor="transparent"
+                        underlayColor="transparent"/>
+                )
             }
         },
         Classic: {
