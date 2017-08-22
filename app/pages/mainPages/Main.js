@@ -19,7 +19,6 @@ const propTypes = {
     movies: PropTypes.array
 }
 */
-const { width, height } = Dimensions.get('window')
 
 class Main extends React.Component {
     constructor(props) {
@@ -45,7 +44,7 @@ class Main extends React.Component {
                         <HotList { ...this.props }/>
                     </ScrollView>
                     <ScrollView tabLabel='即将上映'>
-                        <CommingList/>
+                        <CommingList {...this.props}/>
                     </ScrollView>
                     <ScrollView tabLabel='北美票房'>
                         <USAList/>

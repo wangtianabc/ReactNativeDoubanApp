@@ -75,10 +75,7 @@ const App = StackNavigator(
             screen: MainScreenNavigator
         },
         MovieDetail: {
-            screen: MovieDetail,
-            navigationOptions: {
-                title: '详细信息'
-            }
+            screen: MovieDetail
         }
     },
     {

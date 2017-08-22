@@ -2,13 +2,8 @@ import React from 'react'
 import {
     Text,
     View,
-    Image,
-    Button,
-    FlatList,
     StyleSheet,
-    ListView,
-    ActivityIndicator,
-    TouchableOpacity
+    ListView
 } from 'react-native'
 import LoadingView from '../../components/LoadingView'
 import ItemCell from './ItemCell'
@@ -34,14 +29,15 @@ class HotList extends React.Component {
 
     }
     onPress = (movie) => {
-
+        const { navigate } = this.props.navigation
+        navigate('MovieDetail', {movie})
     }
     renderItem = movie =>
         <ItemCell item={movie} onPressHandler={this.onPress} />
 
     renderContent = () => {
         if (this.props.loading || this.props.movies === undefined || this.props.movies.length === 0) {
-            return <LoadingView/>
+            return <LoadingView style={styles.loading}/>
         }
 
         return (

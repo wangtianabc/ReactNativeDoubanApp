@@ -1,5 +1,21 @@
+/**获取电影列表（热映）
+ *
+ * @type {string}
+ */
 export  const REQUEST_HOT_MOVIE_LIST = 'REQUEST_HOT_MOVIE_LIST'
-
 export  const FETCH_HOT_MOVIE_LIST = 'FETCH_HOT_MOVIE_LIST'
-
 export  const RECEIVE_HOT_MOVIE_LIST = 'RECEIVE_HOT_MOVIE_LIST'
+/**获取即将上映列表
+ *
+ * @type {string}
+ */
+export  const REQUEST_COMMING_MOVIE_LIST = 'REQUEST_COMMING_MOVIE_LIST'
+export  const FETCH_COMMING_MOVIE_LIST = 'FETCH_COMMING_MOVIE_LIST'
+export  const RECEIVE_COMMING_MOVIE_LIST = 'RECEIVE_COMMING_MOVIE_LIST'
+/**获取音乐列表
+ *
+ * @type {string}
+ */
+export const REQUEST_MUSIC_LIST = 'REQUEST_MUSIC_LIST'
+export const FETCH_MUSIC_LIST = 'FETCH_MUSIC_LIST'
+export const RECEIVE_MUSIC_LIST = 'RECEIVE_MUSIC_LIST'

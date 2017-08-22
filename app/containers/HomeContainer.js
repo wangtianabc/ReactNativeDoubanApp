@@ -15,7 +15,8 @@ const mapStateToProps = (state) => {
     return {
         isRefreshing: state.movie.isRefreshing,
         loading: state.movie.loading,
-        movies: state.movie.movies
+        movies: state.movie.movies,
+        commingMovies: state.movie.commingMovies
     }
 }
 

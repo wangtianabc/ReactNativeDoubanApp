@@ -4,7 +4,8 @@ const initState = {
     isRefreshing: false,
     loading: false,
     isLoadMore: false,
-    movies: []
+    movies: [],
+    commingMovies: []
 }
 
 const movieReducer = (state=initState, action) => {
@@ -14,13 +15,28 @@ const movieReducer = (state=initState, action) => {
                 ...state,
                 isRefreshing: action.isRefreshing,
                 loading: action.loading,
-                isLoadMore: action.isLoadMore }
+                isLoadMore: action.isLoadMore
+            }
         case types.RECEIVE_HOT_MOVIE_LIST:
             return {
                 ...state,
                 isRefreshing: action.isRefreshing,
                 loading: action.loading,
                 movies: action.hotMovieList
+            }
+        case types.FETCH_COMMING_MOVIE_LIST:
+            return {
+                ...state,
+                isRefreshing: action.isRefreshing,
+                loading: action.loading,
+                isLoadMore: action.isLoadMore
+            }
+        case types.RECEIVE_COMMING_MOVIE_LIST:
+            return {
+                ...state,
+                isRefreshing: action.isRefreshing,
+                loading: action.loading,
+                commingMovies: action.commingMovieList
             }
         default:
             return state

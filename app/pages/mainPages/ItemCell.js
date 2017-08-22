@@ -7,8 +7,8 @@ import {
     TouchableOpacity
 } from 'react-native'
 
-const ItemCell = ({ item, onPressHandle }) => (
-    <TouchableOpacity onPress={() => onPressHandle(item)}>
+const ItemCell = ({ item, onPressHandler }) => (
+    <TouchableOpacity onPress={() => onPressHandler(item)}>
         <View style={styles.containerItem}>
             <Image style={styles.itemImg} source={{uri: item.images.large}}/>
             <View style={styles.itemRightContent}>
