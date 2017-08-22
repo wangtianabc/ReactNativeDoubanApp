@@ -10,14 +10,14 @@ import {
 const ItemCell = ({ item, onPressHandler }) => (
     <TouchableOpacity onPress={() => onPressHandler(item)}>
         <View style={styles.containerItem}>
-            <Image style={styles.itemImg} source={{uri: item.images.large}}/>
+            <Image style={styles.itemImg} source={{uri: item.subject === undefined ? item.images.large : item.subject.images.large}}/>
             <View style={styles.itemRightContent}>
                 <Text>
-                    {item.title}
+                    {item.subject === undefined ? item.title : item.subject.title}
                 </Text>
                 <View style={styles.itemRightBottom}>
                     <Text style={styles.userName}>
-                        {item.directors[0].name}
+                        {item.subject === undefined ? item.directors[0].name : item.subject.directors[0].name}
                     </Text>
                 </View>
             </View>
@@ -57,9 +57,10 @@ const styles = StyleSheet.create({
     userName: {
         flex: 1,
         fontSize: 14,
-        color: '#87CEFA',
         marginTop: 5,
-        marginRight: 5
+        marginRight: 5,
+        lineHeight: 20,
+        color: '#A6A6A6'
     }
 })
 

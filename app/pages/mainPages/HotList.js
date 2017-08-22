@@ -6,7 +6,7 @@ import {
     ListView
 } from 'react-native'
 import LoadingView from '../../components/LoadingView'
-import ItemCell from './ItemCell'
+import HotItemCell from './HotItemCell'
 import ItemListView from './ItemListView'
 
 
@@ -33,7 +33,7 @@ class HotList extends React.Component {
         navigate('MovieDetail', {movie})
     }
     renderItem = movie =>
-        <ItemCell item={movie} onPressHandler={this.onPress} />
+        <HotItemCell item={movie} onPressHandler={this.onPress} />
 
     renderContent = () => {
         if (this.props.loading || this.props.movies === undefined || this.props.movies.length === 0) {

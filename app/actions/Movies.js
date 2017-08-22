@@ -55,3 +55,59 @@ export function receiveCommingMovieList(isRefreshing, loading, commingMovieList)
         commingMovieList
     }
 }
+
+export function requestUSAMovieList(isRefreshing, loading, isLoadMore, subUrl = '') {
+    return {
+        type: types.REQUEST_USA_MOVIE_LIST,
+        isRefreshing,
+        loading,
+        isLoadMore,
+        subUrl
+    }
+}
+
+export function fetchUSAMovieList(isRefreshing, loading, isLoadMore = false) {
+    return {
+        type: types.FETCH_USA_MOVIE_LIST,
+        isRefreshing,
+        loading,
+        isLoadMore
+    }
+}
+
+export function receiveUSAMovieList(isRefreshing, loading, usaMovieList) {
+    return {
+        type: types.RECEIVE_USA_MOVIE_LIST,
+        isRefreshing,
+        loading,
+        usaMovieList
+    }
+}
+
+export function requestTOPMovieList(isRefreshing, loading, isLoadMore, subUrl = '') {
+    return {
+        type: types.REQUEST_TOP_MOVIE_LIST,
+        isRefreshing,
+        loading,
+        isLoadMore,
+        subUrl
+    }
+}
+
+export function fetchTOPMovieList(isRefreshing, loading, isLoadMore = false) {
+    return {
+        type: types.FETCH_TOP_MOVIE_LIST,
+        isRefreshing,
+        loading,
+        isLoadMore
+    }
+}
+
+export function receiveTOPMovieList(isRefreshing, loading, topMovieList) {
+    return {
+        type: types.RECEIVE_TOP_MOVIE_LIST,
+        isRefreshing,
+        loading,
+        topMovieList
+    }
+}

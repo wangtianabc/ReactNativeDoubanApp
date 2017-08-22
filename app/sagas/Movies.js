@@ -3,7 +3,16 @@ import * as types from '../constans/ActionTypes'
 import Msg from '../utils/MsgUtil'
 import { Douban_Url } from '../constans/Url'
 import { Request } from '../utils/RequestUtil'
-import { fetchHotMovieList, receiveHotMovieList, fetchCommingMovieList, receiveCommingMovieList } from '../actions/Movies'
+import {
+    fetchHotMovieList,
+    receiveHotMovieList,
+    fetchCommingMovieList,
+    receiveCommingMovieList,
+    fetchUSAMovieList,
+    receiveUSAMovieList,
+    fetchTOPMovieList,
+    receiveTOPMovieList
+} from '../actions/Movies'
 
 export function* requestHotMovieList (isRefreshing, loading, isLoadMore, subUrl) {
     try{
@@ -69,6 +78,76 @@ export function* watchRequestCommingMovieList() {
         )
         yield fork(
             requestCommingMovieList,
+            isRefreshing,
+            loading,
+            isLoadMore,
+            subUrl
+        )
+    }
+}
+
+export function* requestUSAMovieList (isRefreshing, loading, isLoadMore, subUrl) {
+    try{
+        yield put(fetchUSAMovieList(isRefreshing, loading, isLoadMore))
+        const usaMovieList = yield call(
+            Request,
+            Douban_Url + subUrl,
+            'get'
+        )
+        const errorMessage = usaMovieList.msg
+        if (errorMessage && errorMessage !=='') {
+            yield Msg.showShort(errorMessage)
+        } else {
+            yield  put(receiveUSAMovieList(false, false,  usaMovieList.subjects))
+        }
+    } catch (error) {
+        yield put(receiveUSAMovieList(false, false, []))
+        Msg.showShort('未取到数据，请重试')
+    }
+}
+
+export function* watchRequestUSAMovieList() {
+    while (true) {
+        const { isRefreshing, loading, isLoadMore, subUrl } = yield take(
+            types.REQUEST_USA_MOVIE_LIST
+        )
+        yield fork(
+            requestUSAMovieList,
+            isRefreshing,
+            loading,
+            isLoadMore,
+            subUrl
+        )
+    }
+}
+
+export function* requestTOPMovieList (isRefreshing, loading, isLoadMore, subUrl) {
+    try{
+        yield put(fetchTOPMovieList(isRefreshing, loading, isLoadMore))
+        const topMovieList = yield call(
+            Request,
+            Douban_Url + subUrl,
+            'get'
+        )
+        const errorMessage = topMovieList.msg
+        if (errorMessage && errorMessage !=='') {
+            yield Msg.showShort(errorMessage)
+        } else {
+            yield  put(receiveTOPMovieList(false, false,  topMovieList.subjects))
+        }
+    } catch (error) {
+        yield put(receiveTOPMovieList(false, false, []))
+        Msg.showShort('未取到数据，请重试')
+    }
+}
+
+export function* watchRequestTOPMovieList() {
+    while (true) {
+        const { isRefreshing, loading, isLoadMore, subUrl } = yield take(
+            types.REQUEST_TOP_MOVIE_LIST
+        )
+        yield fork(
+            requestTOPMovieList,
             isRefreshing,
             loading,
             isLoadMore,

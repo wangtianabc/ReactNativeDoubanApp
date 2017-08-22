@@ -33,16 +33,13 @@ class Main extends React.Component {
     render() {
         return (
             <View style={styles.mainView} >
-                <SearchView
-                    city={true}
-                    navigation={this.props.navigation}
-                />
+
                 <ScrollableTabView renderTabBar={() => <DefaultTabBar tabStyle={styles.tab} textStyle={styles.tabText} />}
 
                                    locked={false}
                                    tabBarUnderlineStyle={styles.lineStyle}
                                    tabBarBackgroundColor='#FFFFFF'
-                                   tabBarActiveTextColor='#3e9ce9'
+                                   tabBarActiveTextColor='#32CD32'
                                    tabBarInactiveTextColor='#959595'
                                    >
                     <ScrollView  tabLabel='正在热映'>
@@ -52,10 +49,10 @@ class Main extends React.Component {
                         <CommingList {...this.props}/>
                     </ScrollView>
                     <ScrollView tabLabel='北美票房'>
-                        <USAList/>
+                        <USAList {...this.props}/>
                     </ScrollView>
                     <ScrollView tabLabel='TOP250'>
-                        <Top250/>
+                        <Top250 {...this.props}/>
                     </ScrollView>
                 </ScrollableTabView>
             </View>
@@ -89,7 +86,7 @@ const styles = StyleSheet.create({
     },
     lineStyle: {
         height: 1,
-        backgroundColor: '#3e9ce9',
+        backgroundColor: '#32CD32',
     },
 })
 

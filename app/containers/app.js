@@ -56,7 +56,7 @@ const MainScreenNavigator = TabNavigator(
         lazy: true,
         tabBarPosition: 'bottom',
         tabBarOptions: {
-            activeTintColor: '#3e9ce9',
+            activeTintColor: '#32CD32',
             inactiveTintColor: '#999999',
             showIcon: true,
             labelStyle: {
@@ -88,7 +88,7 @@ const App = StackNavigator(
         headerMode: 'screen',
         navigationOptions: {
             headerStyle: {
-                backgroundColor: '#3e9ce9'
+                backgroundColor: '#32CD32'
             },
             headerTitleStyle: {
                 color: '#fff',
