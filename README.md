@@ -12,5 +12,5 @@ DoubanApp （开发中。。。）
 
 技术栈：react-native+react-navigation+redux+react-redux+sagas
 
-![image](https://github.com/wangtianabc/ReactNativeDoubanApp/tree/master/screen/android.png?raw=true)
-![image](https://github.com/wangtianabc/ReactNativeDoubanApp/tree/master/screen/iphone.JPG?raw=true)
+![image](https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/android.png)
+![image](https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/iphone.JPG)
