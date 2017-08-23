@@ -3,7 +3,6 @@ import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-vi
 import {
     Text,
     StyleSheet,
-    Dimensions,
     View,
     ScrollView,
     FlatList
