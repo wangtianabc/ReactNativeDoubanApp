@@ -19,7 +19,7 @@
 
 ## 预览图：
 <center class="half">
-<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/iphone.JPG" width = "300" alt="iphone"  />
+<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/iphone.png" width = "300" alt="iphone"  />
 <img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/main-android.png" width = "300" alt="android" />
  </center >
 
