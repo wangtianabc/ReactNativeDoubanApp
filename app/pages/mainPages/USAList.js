@@ -36,14 +36,15 @@ class USAList extends React.Component {
         <ItemCell item={movie} onPressHandler={this.onPress} />
 
     renderContent = () => {
-        if (this.props.loading || this.props.usaMovies === undefined || this.props.usaMovies.length === 0) {
+        const { movie } = this.props
+        if (movie.loading || movie.usaMovies === undefined || movie.usaMovies.length === 0) {
             return <LoadingView msg= { '北美排行加载...' } style={styles.loading}/>
         }
 
         return (
             <ItemListView
-                dataSource={this.state.dataSource.cloneWithRows(this.props.usaMovies)}
-                isRefreshing={this.props.isRefreshing}
+                dataSource={this.state.dataSource.cloneWithRows(movie.usaMovies)}
+                isRefreshing={movie.isRefreshing}
                 renderItem={this.renderItem}/>
         )
     }

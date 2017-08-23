@@ -36,14 +36,15 @@ class Top250 extends React.Component {
         <TopItemCell item={movie} onPressHandler={this.onPress} />
 
     renderContent = () => {
-        if (this.props.loading || this.props.topMovies === undefined || this.props.topMovies.length === 0) {
+        const { movie } = this.props
+        if (movie.loading || movie.topMovies === undefined || movie.topMovies.length === 0) {
             return <LoadingView msg= { 'TOP250加载...' } style={styles.loading}/>
         }
 
         return (
             <ItemListView
-                dataSource={this.state.dataSource.cloneWithRows(this.props.topMovies)}
-                isRefreshing={this.props.isRefreshing}
+                dataSource={this.state.dataSource.cloneWithRows(movie.topMovies)}
+                isRefreshing={movie.isRefreshing}
                 renderItem={this.renderItem}/>
         )
     }

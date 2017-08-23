@@ -36,14 +36,15 @@ class CommingList extends React.Component {
         <ItemCell item={movie} onPressHandler={this.onPress} />
 
     renderContent = () => {
-        if (this.props.loading || this.props.commingMovies === undefined || this.props.commingMovies.length === 0) {
+        const { movie } = this.props
+        if (movie.loading || movie.commingMovies === undefined || movie.commingMovies.length === 0) {
             return <LoadingView msg= { '即将上映电影加载...' } style={styles.loading}/>
         }
 
         return (
             <ItemListView
-                dataSource={this.state.dataSource.cloneWithRows(this.props.commingMovies)}
-                isRefreshing={this.props.isRefreshing}
+                dataSource={this.state.dataSource.cloneWithRows(movie.commingMovies)}
+                isRefreshing={movie.isRefreshing}
                 renderItem={this.renderItem}/>
         )
     }

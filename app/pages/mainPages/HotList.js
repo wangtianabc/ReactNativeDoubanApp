@@ -23,7 +23,6 @@ class HotList extends React.Component {
     componentDidMount() {
         const { movieAction } = this.props
         movieAction.requestHotMovieList(true, true, false, '/movie/in_theaters')
-        //console.log(this.props)
     }
     refreshData = () => {
 
@@ -41,14 +40,16 @@ class HotList extends React.Component {
     }
 
     renderContent = () => {
-        if (this.props.loading || this.props.movies === undefined || this.props.movies.length === 0) {
+        const { movie } = this.props
+        console.log(movie)
+        if (movie.loading || movie.movies === undefined || movie.movies.length === 0) {
             return <LoadingView msg={ '热映电影加载...' } style={styles.loading}/>
         }
 
         return (
             <ItemListView
-                dataSource={this.state.dataSource.cloneWithRows(this.props.movies)}
-                isRefreshing={this.props.isRefreshing}
+                dataSource={this.state.dataSource.cloneWithRows(movie.movies)}
+                isRefreshing={movie.isRefreshing}
                 renderItem={this.renderItem}/>
         )
     }
