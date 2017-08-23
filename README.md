@@ -18,8 +18,10 @@
 >6. sagas
 
 ## 预览图：
+<center class="half">
 <img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/iphone.JPG" width = "300" alt="iphone"  />
 <img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/main-android.png" width = "300" alt="android" />
+ </center >
 
 ## 参考学习:
 >1. https://github.com/jianxiaoBai/douban
