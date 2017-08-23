@@ -2,7 +2,7 @@
 DoubanApp （开发中。。。）
 同时适配: ios android
 
-# 利用豆瓣API V2练习开发
+### 利用豆瓣API V2练习开发
 
 >#运行：
 
@@ -20,8 +20,6 @@ DoubanApp （开发中。。。）
 
 >#预览图：
 <img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/iphone.JPG" width = "300" alt="iphone" align=center />
-1. iphone:
-![image](https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/iphone.JPG)
-2. android:
-![image](https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/main-android.png)
+<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/main-android.png" width = "300" alt="android" align=center />
+
 
