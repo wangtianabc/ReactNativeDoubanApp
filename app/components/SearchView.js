@@ -1,36 +1,26 @@
 import React from 'react'
 import {
     View,
-    Text,
-    StyleSheet,
-    FlatList,
-    TouchableOpacity
+    TextInput,
+    StyleSheet
 } from 'react-native'
+import InputText from './InputText'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 class SearchView extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-
-        }
+        this.state = { text: '' }
     }
 
     render() {
-        const { navigate } = this.props.navigation
+        //const { navigate } = this.props.navigation
         return (
             <View style={styles.header}>
-                <TouchableOpacity style={styles.city} onPress={()=>alert('北京欢迎你')}>
-                    <Text>北京 <Icon name="chevron-down" size={10} color="#222222" /></Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.search} onPress={() =>navigate('SearchIng')}>
-                    <Text style={{
-                        textAlign: 'center',
-                        lineHeight: 25,
-                        color: '#8B8B8B'
-                    }}> <Icon name="search" size={10} color="#8B8B8B" /> 电影/电视剧/影人</Text>
-                </TouchableOpacity>
+                <InputText
+                    name={'搜索：'}
+                    txtHide={'输入歌曲名称'}
+                />
             </View>
         )
     }
@@ -42,6 +32,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         paddingLeft:20,
         paddingRight:20,
+        marginTop: 5
     },
     search: {
         backgroundColor: '#F5F5F5',
