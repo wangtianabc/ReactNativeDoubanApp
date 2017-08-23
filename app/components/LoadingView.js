@@ -6,10 +6,10 @@ import {
     ActivityIndicator
 } from 'react-native'
 
-const LoadingView = () => (
+const LoadingView = ({msg, size = 'large', color = '#32CD32'}) => (
     <View style={styles.loading}>
-        <ActivityIndicator size="small" color="#32CD32"/>
-        <Text style={styles.loadingText}>数据加载中...</Text>
+        <ActivityIndicator size={size} color={color}/>
+        <Text style={styles.loadingText}>{msg}</Text>
     </View>
 )
 

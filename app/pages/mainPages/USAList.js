@@ -37,7 +37,7 @@ class USAList extends React.Component {
 
     renderContent = () => {
         if (this.props.loading || this.props.usaMovies === undefined || this.props.usaMovies.length === 0) {
-            return <LoadingView style={styles.loading}/>
+            return <LoadingView msg= { '北美排行加载...' } style={styles.loading}/>
         }
 
         return (

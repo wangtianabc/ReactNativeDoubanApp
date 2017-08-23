@@ -37,7 +37,7 @@ class CommingList extends React.Component {
 
     renderContent = () => {
         if (this.props.loading || this.props.commingMovies === undefined || this.props.commingMovies.length === 0) {
-            return <LoadingView style={styles.loading}/>
+            return <LoadingView msg= { '即将上映电影加载...' } style={styles.loading}/>
         }
 
         return (

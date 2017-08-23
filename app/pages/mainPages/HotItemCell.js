@@ -6,6 +6,7 @@ import {
     StyleSheet,
     TouchableOpacity
 } from 'react-native'
+import Star from '../../components/Star'
 
 const HotItemCell = ({ item, onPressHandler }) => (
     <TouchableOpacity onPress={() => onPressHandler(item)} style={[styles.hotList]}>
@@ -16,13 +17,16 @@ const HotItemCell = ({ item, onPressHandler }) => (
             <Text style={styles.title}>
                 {item.title}
             </Text>
+            <View style={{marginTop: 3, marginBottom: 3}}>
+                <Star value={item.rating.stars}/>
+            </View>
             <Text style={styles.smallFont}>导演：{item.directors[0].name}</Text>
             <Text style={styles.smallFont}>主演：{item.casts.map((v) => v.name).join('/')}</Text>
             <Text style={styles.sawFont}>{item.collect_count}人看过</Text>
         </View>
         <View style={{flex: 0}}>
             <TouchableOpacity onPress={() => alert('付钱:'+item.id)}>
-                <Text style={{color: '#FF6100', fontWeight: '900'}}>购票</Text>
+                <Text style={{color: '#ED9121', fontWeight: '900'}}>购票</Text>
             </TouchableOpacity>
         </View>
     </TouchableOpacity>

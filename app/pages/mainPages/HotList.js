@@ -32,12 +32,17 @@ class HotList extends React.Component {
         const { navigate } = this.props.navigation
         navigate('MovieDetail', {movie})
     }
+
     renderItem = movie =>
         <HotItemCell item={movie} onPressHandler={this.onPress} />
 
+    renderFooter = () => {
+
+    }
+
     renderContent = () => {
         if (this.props.loading || this.props.movies === undefined || this.props.movies.length === 0) {
-            return <LoadingView style={styles.loading}/>
+            return <LoadingView msg={ '热映电影加载...' } style={styles.loading}/>
         }
 
         return (

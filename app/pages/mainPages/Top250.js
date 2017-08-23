@@ -37,7 +37,7 @@ class Top250 extends React.Component {
 
     renderContent = () => {
         if (this.props.loading || this.props.topMovies === undefined || this.props.topMovies.length === 0) {
-            return <LoadingView style={styles.loading}/>
+            return <LoadingView msg= { 'TOP250加载...' } style={styles.loading}/>
         }
 
         return (
