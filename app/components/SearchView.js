@@ -18,8 +18,11 @@ class SearchView extends React.Component {
         return (
             <View style={styles.header}>
                 <InputText
-                    name={'搜索：'}
+                    name={'md-search'}
                     txtHide={'输入歌曲名称'}
+                    isPassword={false}
+                    onSearch={this.props.onSearch}
+                    onChangeText={this.props.onChangeText}
                 />
             </View>
         )
@@ -28,27 +31,12 @@ class SearchView extends React.Component {
 
 const styles = StyleSheet.create({
     header: {
-        height: 35,
+        height: 40,
         flexDirection:'row',
-        paddingLeft:20,
-        paddingRight:20,
-        marginTop: 5
-    },
-    search: {
-        backgroundColor: '#F5F5F5',
-        flex:6,
-        height:30,
-        borderRadius:10,
-        justifyContent:'center',
-        alignItems:'center',
-    },
-    city: {
-        flex:1,
-        height:30,
-        marginRight:8,
-        justifyContent:'center',
-        alignItems:'center',
-
+        alignItems: 'center',
+        paddingLeft:10,
+        paddingRight:10,
+        marginTop: 10,
     }
 })
 

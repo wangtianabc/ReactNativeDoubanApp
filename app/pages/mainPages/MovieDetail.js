@@ -33,7 +33,7 @@ class MovieDetail extends React.Component {
         }
     }
 
-    renderLoading = () => <LoadingView/>
+    renderLoading = () => <LoadingView msg={'加载中...'}/>
 
     onNavigationStateChange = (navState) => {
         canGoBack = navState.canGoBack;

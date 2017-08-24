@@ -25,13 +25,7 @@ const MainScreenNavigator = TabNavigator(
             }
         },
         Classic: {
-            screen: ClassicContainer,
-            navigationOptions: {
-                title: '音乐',
-                tabBarIcon: ({tintColor}) => (
-                    <Icon name="md-musical-notes" size={25} color={tintColor}/>
-                ),
-            }
+            screen: ClassicContainer
         },
         Book: {
             screen: BookContainer,

@@ -6,39 +6,39 @@ import {
     View,
     StyleSheet
 } from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
 
 class InputText extends React.Component {
 
     static defaultProps = {
-        name: '名称',
-        txtHide: '内容',
-        ispassword: false,
+        name: 'md-search',
+        txtHide: '内容'
     }
     constructor (props) {
         super (props)
         this.state = {
-            txtValue: "",
+            txtValue: '',
         }
     }
     render () {
-        var { style, name, txtHide, ispassword } = this.props
+        var { style, name, txtHide, onSearch, onChangeText} = this.props
         return(
-            <View style={styles.container,style}>
+            <View style={[styles.container,style]}>
                 <View style={styles.txtBorder}>
-                    <Text style={styles.txtName}>{name}</Text>
                     <TextInput
                         underlineColorAndroid = {'transparent'}
                         style={styles.textInput}
                         multiline={false}
                         placeholder={txtHide}
-                        password={ispassword}
+                        password={false}
+                        onSubmitEditing={onSearch}
                         onChangeText={(text) => {
-                            this.setState({
-                                txtValue: text
-                            })
+                            this.setState({ txtValue: text })
+                            onChangeText(text)
                         }}
                         value={this.state.txtValue}
                     />
+                    <Icon name={name} size={20} style={styles.icon} backgroundColor="transparent" underlayColor="transparent"/>
                 </View>
             </View>
         )
@@ -55,29 +55,29 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     txtBorder: {
-        height: 35,
+        height: 40,
         flex: 1,
         borderWidth: 1,
-        borderColor: '#32CD32',
+        borderColor: '#999999',
         marginLeft: 20,
         marginRight: 20,
-        borderRadius: 15,
-        flexDirection: 'row'
+        borderRadius: 5,
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#ffffff'
     },
-    txtName: {
+    icon: {
         height: 20,
-        width: 40,
-        marginLeft: 20,
-        marginTop: 15,
-        marginBottom: 1,
-        color: '#32CD32',
+        width: 20,
+        marginLeft: 10,
         marginRight: 10,
-        fontSize: 12
     },
     textInput: {
-        height: 50,
-        width: 200,
-        fontSize: 12
+        flex: 1,
+        height: 36,
+        fontSize: 12,
+        marginLeft: 5,
+        backgroundColor: '#ffffff'
     }
 })
 

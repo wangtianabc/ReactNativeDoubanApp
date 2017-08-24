@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         paddingRight: 18,
         flexDirection: 'row',
         alignItems: 'center',
-        borderBottomWidth: 1,
+        borderBottomWidth: 2,
         borderBottomColor: '#ddd'
     },
     title: {

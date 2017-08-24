@@ -41,7 +41,6 @@ class HotList extends React.Component {
 
     renderContent = () => {
         const { movie } = this.props
-        console.log(movie)
         if (movie.loading || movie.movies === undefined || movie.movies.length === 0) {
             return <LoadingView msg={ '热映电影加载...' } style={styles.loading}/>
         }

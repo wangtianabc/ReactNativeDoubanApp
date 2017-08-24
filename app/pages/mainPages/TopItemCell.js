@@ -11,7 +11,7 @@ const TopItemCell = ({ item, onPressHandler }) => (
     <TouchableOpacity onPress={() => onPressHandler(item)} style={[styles.topList]}>
         <View style={{flexDirection:'row',justifyContent:'center', alignItems:'center'}}>
             <View style={styles.line} ></View>
-                <Text style={{paddingLeft:10,paddingRight:10,color:'red'}}>*****</Text>
+            <Text style={{paddingLeft:10,paddingRight:10,color:'red',fontSize: 25}}>*****</Text>
             <View style={styles.line} ></View>
         </View>
         <View style={styles.container}>
