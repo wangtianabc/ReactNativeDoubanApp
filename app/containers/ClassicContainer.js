@@ -1,9 +1,12 @@
 import React from 'react'
-import {
-    Text
-} from 'react-native'
+import { View } from 'react-native'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 import SearchView from '../components/SearchView'
+import Music from '../pages/musicPages/Music'
 import Icon from 'react-native-vector-icons/Ionicons'
+import * as musicCreators from '../actions/Music'
+
 
 class ClassicContainer extends React.Component {
     constructor(props) {
@@ -41,7 +44,10 @@ class ClassicContainer extends React.Component {
 
     hideSearch = () => {
         this.setState({ search: false })
-        alert(this.state.searchValue)
+        debugger
+        console.log(this.refs)
+
+        //this.refs.musicList.searchAction()
     }
 
     componentDidMount(){
@@ -50,9 +56,28 @@ class ClassicContainer extends React.Component {
 
     render() {
         return (
-            this.state.search ? <SearchView onSearch={this.hideSearch} onChangeText={this.onChangeText}/> : null
+            <View>
+                <View>
+                    {this.state.search ? <SearchView ref="test" onSearch={this.hideSearch} onChangeText={this.onChangeText}/> : <Music { ...this.props } songName={this.state.searchValue} ref="musicList"/>}
+                </View>
+            </View>
         )
     }
 }
 
-export default ClassicContainer
+
+const mapStateToProps = (state) => {
+    const { music } = state
+    return {
+        music
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    const musicAction = bindActionCreators(musicCreators, dispatch)
+    return {
+        musicAction
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(ClassicContainer)

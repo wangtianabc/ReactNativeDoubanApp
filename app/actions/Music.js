@@ -1,28 +1,23 @@
 import * as types from '../constans/ActionTypes'
 
-export function requestHotMovieList(isRefreshing, loading, isLoadMore, subUrl = '') {
+export function requestMusicList(loading, subUrl = '') {
     return {
-        type: types.REQUEST_HOT_MOVIE_LIST,
-        isRefreshing,
+        type: types.REQUEST_MUSIC_LIST,
         loading,
-        isLoadMore,
         subUrl
     }
 }
 
-export function fetchHotMovieList(isRefreshing, loading, isLoadMore = false) {
+export function fetchMusicList(loading) {
     return {
-        type: types.FETCH_HOT_MOVIE_LIST,
-        isRefreshing,
-        loading,
-        isLoadMore
+        type: types.FETCH_MUSIC_LIST,
+        loading
     }
 }
 
-export function receiveHotMovieList(isRefreshing, loading, hotMovieList) {
+export function receiveMusicList(loading, hotMovieList) {
     return {
-        type: types.RECEIVE_HOT_MOVIE_LIST,
-        isRefreshing,
+        type: types.REQUEST_MUSIC_LIST,
         loading,
         hotMovieList
     }

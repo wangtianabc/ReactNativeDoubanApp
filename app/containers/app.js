@@ -18,7 +18,7 @@ const MainScreenNavigator = TabNavigator(
                 ),
                 headerRight: (
                     <Icon.Button
-                        name="md-search"
+                        name="md-add"
                         backgroundColor="transparent"
                         underlayColor="transparent"/>
                 )
