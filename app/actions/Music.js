@@ -15,10 +15,10 @@ export function fetchMusicList(loading) {
     }
 }
 
-export function receiveMusicList(loading, hotMovieList) {
+export function receiveMusicList(loading, musicList) {
     return {
-        type: types.REQUEST_MUSIC_LIST,
+        type: types.RECEIVE_MUSIC_LIST,
         loading,
-        hotMovieList
+        musicList
     }
 }

@@ -7,7 +7,7 @@ const initState = {
 
 const musicReducer = (state=initState, action) => {
     switch (action.type) {
-        case types.REQUEST_MUSIC_LIST:
+        case types.FETCH_MUSIC_LIST:
             return {
                 ...state,
                 loading: action.loading
@@ -16,7 +16,7 @@ const musicReducer = (state=initState, action) => {
             return {
                 ...state,
                 loading: action.loading,
-                movies: action.hotMovieList
+                musics: action.musicList
             }
         default:
             return state

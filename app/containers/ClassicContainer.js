@@ -44,10 +44,9 @@ class ClassicContainer extends React.Component {
 
     hideSearch = () => {
         this.setState({ search: false })
-        debugger
-        console.log(this.refs)
-
-        //this.refs.musicList.searchAction()
+        //debugger
+        //console.log(this.refs)
+        this.refs.musicList.searchAction()
     }
 
     componentDidMount(){
@@ -58,7 +57,10 @@ class ClassicContainer extends React.Component {
         return (
             <View>
                 <View>
-                    {this.state.search ? <SearchView ref="test" onSearch={this.hideSearch} onChangeText={this.onChangeText}/> : <Music { ...this.props } songName={this.state.searchValue} ref="musicList"/>}
+                    {this.state.search ? <SearchView ref="test" onSearch={this.hideSearch} onChangeText={this.onChangeText}/> : null}
+                </View>
+                <View>
+                    <Music { ...this.props } songName={this.state.searchValue} ref="musicList"/>
                 </View>
             </View>
         )

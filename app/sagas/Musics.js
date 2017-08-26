@@ -17,7 +17,6 @@ export function* requestMusicList (loading, subUrl) {
             Douban_Music_Url + subUrl,
             'get'
         )
-        debugger
         const errorMessage = musicList.msg
         if (errorMessage && errorMessage !=='') {
             yield Msg.showShort(errorMessage)
