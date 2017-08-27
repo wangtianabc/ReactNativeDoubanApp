@@ -26,7 +26,7 @@ class Music extends React.Component {
     renderContent = () => {
         const { music } = this.props
         if (music.loading) {
-            return <LoadingView msg={ '加载音乐搜索结果...' } size={'large'} style={styles.loading}/>
+            return <LoadingView msg={ '加载音乐搜索结果...' } style={styles.loading}/>
         }
 
         return (

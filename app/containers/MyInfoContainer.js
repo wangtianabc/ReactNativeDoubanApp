@@ -1,14 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {
-    Text
-} from 'react-native'
+import Profile from '../pages/myPages/Profile'
 
 class MyInfoContainer extends React.Component {
-
+    constructor(props) {
+        super(props)
+    }
     render() {
-        return <Text>我的信息</Text>
+        return <Profile {...this.props}/>
     }
 }
 
-export default MyInfoContainer
+const mapStateToProps = (state) => {
+    const { login } = state
+    return {
+        login
+    }
+}
+
+export default connect(mapStateToProps)(MyInfoContainer)

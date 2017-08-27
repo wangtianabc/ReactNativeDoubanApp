@@ -17,7 +17,7 @@ const MusicItem = ({ item, onPressHandler }) => (
                 </Text>
                 <View style={styles.itemRightBottom}>
                     <Text style={styles.userName}>
-                        {item.author[0].name}
+                        {(item.author !== undefined && item.author.length > 0) ? item.author[0].name : '无名氏'}
                     </Text>
                 </View>
             </View>
