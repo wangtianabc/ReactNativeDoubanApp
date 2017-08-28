@@ -1,5 +1,5 @@
 import React from 'react'
-import { View } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import SearchView from '../components/SearchView'
@@ -55,7 +55,7 @@ class ClassicContainer extends React.Component {
 
     render() {
         return (
-            <View>
+            <View style={styles.mainView} >
                 <View>
                     {this.state.search ? <SearchView ref="test" onSearch={this.hideSearch} onChangeText={this.onChangeText}/> : null}
                 </View>
@@ -81,5 +81,13 @@ const mapDispatchToProps = (dispatch) => {
         musicAction
     }
 }
+
+const styles = StyleSheet.create({
+    mainView: {
+        flex: 1,
+        flexDirection: 'column',
+        backgroundColor: '#fff'
+    }
+})
 
 export default connect(mapStateToProps,mapDispatchToProps)(ClassicContainer)

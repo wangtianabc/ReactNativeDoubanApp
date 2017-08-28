@@ -67,16 +67,6 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: '#fff'
     },
-    container: {
-        flex: 1,
-        marginTop: 20
-    },
-    tabView: {
-        flex: 1,
-        padding: 10,
-        marginBottom: 50,
-        backgroundColor: 'rgba(0,0,0,0.01)',
-    },
     tab: {
         paddingBottom: 0
     },
