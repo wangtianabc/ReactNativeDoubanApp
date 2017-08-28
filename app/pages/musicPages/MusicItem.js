@@ -10,7 +10,6 @@ import {
 const MusicItem = ({ item, onPressHandler }) => (
     <TouchableOpacity onPress={() => onPressHandler(item)}>
         <View style={styles.containerItem}>
-            <Image style={styles.itemImg} source={{uri: item.image}}/>
             <View style={styles.itemRightContent}>
                 <Text>
                     {item.title}
@@ -21,6 +20,7 @@ const MusicItem = ({ item, onPressHandler }) => (
                     </Text>
                 </View>
             </View>
+            <Image style={styles.itemImg} source={{uri: item.image}}/>
         </View>
     </TouchableOpacity>
 )
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     itemImg: {
         width: 88,
         height: 66,
-        marginRight: 10
+        marginLeft: 10
     },
     itemRightContent: {
         flex: 1,

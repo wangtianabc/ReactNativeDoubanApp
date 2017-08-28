@@ -1,7 +1,9 @@
 import React from 'react'
 import {
     View,
+    Text,
     ListView,
+    ActivityIndicator,
     StyleSheet
 } from 'react-native'
 import LoadingView from '../../components/LoadingView'
@@ -25,26 +27,20 @@ class Music extends React.Component {
 
     renderContent = () => {
         const { music } = this.props
-        if (music.loading) {
-            return <LoadingView msg={ '加载音乐搜索结果...' } style={styles.loading}/>
-        }
-
-        return (
-            <MusicList
+        return music.loading ? <LoadingView msg= { '音乐加载中...' }/> : <MusicList
                 dataSource={this.state.dataSource.cloneWithRows(music.musics)}
                 isRefreshing={false}
                 renderItem={this.renderItem}/>
-        )
     }
 
     renderItem = music =>
-        <MusicItem item={music} onPressHandler={this.onPress} />
+        <MusicItem item={music} onPressHandler={this.onPress}/>
 
     componentDidMount() {
 
     }
 
-    searchAction() {
+    searchAction = () => {
         const { musicAction} = this.props
         musicAction.receiveMusicList(false, [])
         musicAction.requestMusicList(true, '/music/search?q=' + this.props.songName)
@@ -59,19 +55,11 @@ class Music extends React.Component {
         )
     }
 }
+
 const styles = StyleSheet.create({
     loading: {
         marginTop: 100
-    },
-    hotList: {
-        height: 130,
-        paddingLeft: 18,
-        paddingRight: 18,
-        flexDirection: 'row',
-        alignItems: 'center',
-        borderBottomWidth: 1,
-        borderBottomColor: '#EFEFEF'
-    },
+    }
 })
 
 export default Music

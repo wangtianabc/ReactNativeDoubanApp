@@ -24,10 +24,10 @@ class Profile extends React.Component {
         this.config = [
             {icon:"ios-pin", name:"我的地址"},
             {icon:"ios-heart", name:"我的收藏", color:"#fc7b53"},
-            {icon:"md-images", name:"我的相册"},
-            {icon:"logo-usd", name:"我的评论", color:"#fc7b53"},
+            {icon:"md-text", name:"我的消息", subName: "5条"},
+            {icon:"md-at", name:"我的评论", color:"#fc7b53"},
             {icon:"ios-cart", name:"我的积分", color:"#94d94a"},
-            {icon:"md-flower", name:"设置"},
+            {icon:"md-settings", name:"设置"},
             {icon:"ios-outlet", name:"欢迎评分"},
         ]
     }
@@ -55,7 +55,7 @@ class Profile extends React.Component {
                         />
                     }
                 >
-                    <View style={{minHeight: height - 64 - px2dp(46), paddingBottom: 100, backgroundColor: "#f3f3f3"}}>
+                    <View style={{minHeight: height - 64 - px2dp(46), backgroundColor: "#f3f3f3"}}>
                         <TouchableWithoutFeedback>
                             <View style={styles.userHead}>
                                 <View style={{flex: 1, flexDirection: "row"}}>
@@ -73,19 +73,19 @@ class Profile extends React.Component {
                         </TouchableWithoutFeedback>
                         <View style={styles.numbers}>
                             <TouchableWithoutFeedback>
-                                <View style={styles.numberItem}>
+                                <View style={[styles.numberItem, {borderTopWidth: 1, borderTopColor: "#f5f5f5"}]}>
                                     <Text style={{color: "#f90",fontSize: 18, textAlign: "center", fontWeight: "bold"}}>100</Text>
                                     <Text style={{color: "#333", fontSize: 12, textAlign: "center", paddingTop: 5}}>{"收藏"}</Text>
                                 </View>
                             </TouchableWithoutFeedback>
                             <TouchableWithoutFeedback>
-                                <View style={[styles.numberItem,{borderLeftWidth: 1, borderLeftColor: "#f5f5f5",borderRightWidth: 1, borderRightColor: "#f5f5f5"}]}>
+                                <View style={[styles.numberItem,{borderTopWidth: 1, borderTopColor: "#f5f5f5",borderLeftWidth: 1, borderLeftColor: "#f5f5f5",borderRightWidth: 1, borderRightColor: "#f5f5f5"}]}>
                                     <Text style={{color: "#ff5f3e", fontSize: 18, textAlign: "center", fontWeight: "bold"}}>{"123"}</Text>
                                     <Text style={{color: "#333", fontSize: 12, textAlign: "center", paddingTop: 5}}>{"评论"}</Text>
                                 </View>
                             </TouchableWithoutFeedback>
                             <TouchableWithoutFeedback>
-                                <View style={styles.numberItem}>
+                                <View style={[styles.numberItem, {borderTopWidth: 1, borderTopColor: "#f5f5f5"}]}>
                                     <Text style={{color: "#6ac20b", fontSize: 18, textAlign: "center", fontWeight: "bold"}}>{"456"}</Text>
                                     <Text style={{color: "#333", fontSize: 12, textAlign: "center", paddingTop: 5}}>{"积分"}</Text>
                                 </View>

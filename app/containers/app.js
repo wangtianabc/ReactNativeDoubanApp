@@ -43,6 +43,12 @@ const MainScreenNavigator = TabNavigator(
                 tabBarIcon: ({tintColor}) => (
                     <Icon name="md-person" size={25} color={tintColor}/>
                 ),
+                headerRight: (
+                    <Icon.Button
+                        name="md-settings"
+                        backgroundColor="transparent"
+                        underlayColor="transparent"/>
+                )
             }
         },
     },

@@ -12,7 +12,7 @@ class ClassicContainer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            search: true,
+            search: false,
             searchValue: '',
         }
     }
