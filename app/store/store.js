@@ -3,18 +3,21 @@ import createLogger from 'redux-logger'
 import Login from '../reducers/Login'
 import Movies from '../reducers/Movies'
 import Musics from '../reducers/Music'
+import Books from '../reducers/Book'
 import createSagaMiddleware, {END} from 'redux-saga'
 
 const initState = {
     login: Login.initState,
     movie: Movies.initState,
-    music: Musics.initState
+    music: Musics.initState,
+    book: Books.initState
 }
 
 const reducers = {
     login: Login.loginReducer,
     movie: Movies.movieReducer,
-    music: Musics.musicReducer
+    music: Musics.musicReducer,
+    book: Books.bookReducer
 }
 const sagaMiddleware = createSagaMiddleware()
 

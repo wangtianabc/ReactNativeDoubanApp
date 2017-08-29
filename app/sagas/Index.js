@@ -7,6 +7,7 @@ import {
     watchRequestTOPMovieList
 } from './Movies'
 import { watchRequestMusicList } from './Musics'
+import { watchRequestBookList } from './Books'
 
 export default function* rootSaga() {
     yield [
@@ -14,6 +15,7 @@ export default function* rootSaga() {
         fork(watchRequestCommingMovieList),
         fork(watchRequestUSAMovieList),
         fork(watchRequestTOPMovieList),
-        fork(watchRequestMusicList)
+        fork(watchRequestMusicList),
+        fork(watchRequestBookList)
     ]
 }

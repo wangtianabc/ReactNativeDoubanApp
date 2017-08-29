@@ -15,6 +15,7 @@ const ItemListView = ({
         dataSource={dataSource}
         renderRow={renderItem}
         style={styles.listView}
+        enableEmptySections = {true}
         refreshControl={
             <RefreshControl
                 style={styles.refreshControlBase}
@@ -27,7 +28,7 @@ const ItemListView = ({
 
 const styles = StyleSheet.create({
     listView: {
-        backgroundColor: '#eeeeec'
+        backgroundColor: global.gColor.backgroundColor
     },
     refreshControlBase: {
         backgroundColor: 'transparent'

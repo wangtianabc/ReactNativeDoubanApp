@@ -24,8 +24,9 @@ const styles = StyleSheet.create({
         width: (global.gScreen.width - 15 *2 - 10) / 2,
         minHeight: 150,
         flexDirection: 'column',
-        backgroundColor: '#fff',
+        backgroundColor: global.gColor.backgroundColor,
         padding: 5,
+        marginTop: 10
     },
     itemImage: {
         width: (global.gScreen.width - 15 *2 - 10) / 2 -10,
@@ -36,7 +37,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         borderTopColor: '#f5f5f5',
         borderTopWidth: 1,
-        marginTop: 10
+        marginTop: 10,
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     authorText: {
         flex: 1,
@@ -45,14 +48,10 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         borderRightColor: '#f5f5f5',
         borderRightWidth: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
     },
     titleText: {
         flex: 2,
         fontSize: 12,
-        alignItems: 'center',
-        justifyContent: 'center',
         color: '#f90'
     }
 })

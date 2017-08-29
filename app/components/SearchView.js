@@ -19,7 +19,7 @@ class SearchView extends React.Component {
             <View style={styles.header}>
                 <InputText
                     name={'md-search'}
-                    txtHide={'输入歌曲名称'}
+                    txtHide={this.props.holdText}
                     isPassword={false}
                     onSearch={this.props.onSearch}
                     onChangeText={this.props.onChangeText}

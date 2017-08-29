@@ -1,25 +1,26 @@
 import React from 'react'
 import {
-    Text,
-    Image,
     View,
+    Image,
+    Text,
     StyleSheet,
     TouchableOpacity
 } from 'react-native'
 
-const ItemCell = ({ item, onPressHandler }) => (
-    <TouchableOpacity onPress={() => onPressHandler(item)}>
+const BookCell = ({bookItem, onPressHandler}) => (
+    <TouchableOpacity onPress={() => onPressHandler(bookItem)}>
         <View style={styles.containerItem}>
-            <Image style={styles.itemImg} source={{uri: item.subject === undefined ? item.images.large : item.subject.images.large}}/>
+            <Image style={styles.itemImg} source={{uri: bookItem.images.medium}}/>
             <View style={styles.itemRightContent}>
-                <Text>
-                    {item.subject === undefined ? item.title : item.subject.title}
+                <Text style={styles.title}>
+                    {bookItem.title}
                 </Text>
-                <View style={styles.itemRightBottom}>
-                    <Text style={styles.userName}>
-                        {item.subject === undefined ? item.directors[0].name : item.subject.directors[0].name}
-                    </Text>
-                </View>
+                <Text style={styles.userName}>
+                    发行人: {bookItem.publisher}
+                </Text>
+                <Text style={styles.userName}>
+                    出版日期: {bookItem.pubdate}
+                </Text>
             </View>
         </View>
     </TouchableOpacity>
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: global.gColor.themeColor,
+        backgroundColor: global.gColor.backgroundColor,
         padding: 10,
         borderBottomColor: '#ddd',
         borderBottomWidth: 1
@@ -41,21 +42,15 @@ const styles = StyleSheet.create({
         color: 'black'
     },
     itemImg: {
-        width: 88,
-        height: 66,
+        width: 80,
+        height: 120,
         marginRight: 10
     },
     itemRightContent: {
         flex: 1,
         flexDirection: 'column'
     },
-    itemRightBottom: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center'
-    },
     userName: {
-        flex: 1,
         fontSize: 14,
         marginTop: 5,
         marginRight: 5,
@@ -64,4 +59,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default ItemCell
+export default BookCell

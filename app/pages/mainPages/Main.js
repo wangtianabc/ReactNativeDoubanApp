@@ -38,7 +38,7 @@ class Main extends React.Component {
                                    locked={false}
                                    tabBarUnderlineStyle={styles.lineStyle}
                                    tabBarBackgroundColor='#FFFFFF'
-                                   tabBarActiveTextColor='#32CD32'
+                                   tabBarActiveTextColor={global.gColor.themeColor}
                                    tabBarInactiveTextColor='#959595'
                                    >
                     <ScrollView  tabLabel='正在热映'>
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     },
     lineStyle: {
         height: 1,
-        backgroundColor: '#32CD32',
+        backgroundColor: global.gColor.themeColor
     },
 })
 
