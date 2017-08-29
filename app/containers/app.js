@@ -21,7 +21,8 @@ const MainScreenNavigator = TabNavigator(
                         name="md-add"
                         backgroundColor="transparent"
                         underlayColor="transparent"/>
-                )
+                ),
+                header: null,
             }
         },
         Classic: {
@@ -42,8 +43,10 @@ const MainScreenNavigator = TabNavigator(
                         name="md-settings"
                         backgroundColor="transparent"
                         underlayColor="transparent"/>
-                )
-            }
+                ),
+                header: null,
+            },
+
         },
     },
     {

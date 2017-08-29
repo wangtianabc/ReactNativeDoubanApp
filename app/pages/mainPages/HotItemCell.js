@@ -25,7 +25,7 @@ const HotItemCell = ({ item, onPressHandler }) => (
             <Text style={styles.sawFont}>{item.collect_count}人看过</Text>
         </View>
         <View style={{flex: 0}}>
-            <TouchableOpacity onPress={() => alert('付钱:'+item.id)}>
+            <TouchableOpacity onPress={() => alert('付钱:'+item.id)} style={styles.ticket}>
                 <Text style={{color: '#ED9121', fontWeight: '900'}}>购票</Text>
             </TouchableOpacity>
         </View>
@@ -69,6 +69,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center'
     },
+    ticket: {
+        width: 50,
+        height: 25,
+        marginLeft: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 1,
+        borderColor: '#ED9121',
+        borderRadius: 5,
+    }
 })
 
 export default HotItemCell

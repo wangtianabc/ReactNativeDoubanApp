@@ -42,7 +42,7 @@ class BookContainer extends React.Component {
     }
 
     onSearch = () => {
-        this.setState({search: true})
+        this.setState({search: !this.state.search})
     }
 
     hideSearch = () => {

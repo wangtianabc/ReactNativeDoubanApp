@@ -35,7 +35,7 @@ class ClassicContainer extends React.Component {
     })
 
     onSearch = () => {
-        this.setState({ search: true })
+        this.setState({ search: !this.state.search })
     }
 
     onChangeText = (text) => {

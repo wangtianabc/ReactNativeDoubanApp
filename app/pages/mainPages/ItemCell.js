@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: global.gColor.themeColor,
+        backgroundColor: global.gColor.backgroundColor,
         padding: 10,
         borderBottomColor: '#ddd',
         borderBottomWidth: 1
