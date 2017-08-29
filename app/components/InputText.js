@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#ffffff'
+        backgroundColor: global.gColor.backgroundColor,
     },
     icon: {
         height: 20,
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
         height: 36,
         fontSize: 12,
         marginLeft: 5,
-        backgroundColor: '#ffffff'
+        backgroundColor: global.gColor.backgroundColor,
     }
 })
 

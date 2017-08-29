@@ -50,7 +50,7 @@ class Profile extends React.Component {
                         <RefreshControl
                             refreshing={this.state.isRefreshing}
                             tintColor="#fff"
-                            colors={['#ddd', '#32CD32']}
+                            colors={['#ddd', global.gColor.themeColor]}
                             progressBackgroundColor="#ffffff"
                         />
                     }
@@ -103,7 +103,7 @@ class Profile extends React.Component {
 
 const styles = StyleSheet.create({
     scrollView: {
-        backgroundColor: "#32CD32"
+        backgroundColor: global.gColor.backgroundColor,
     },
     userHead: {
         justifyContent: "space-between",
@@ -111,12 +111,12 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         paddingHorizontal: 20,
         paddingVertical: 20,
-        backgroundColor: "#fff",
+        backgroundColor: global.gColor.backgroundColor,
         borderTopWidth: 0
     },
     numbers: {
         flexDirection: "row",
-        backgroundColor: "#fff",
+        backgroundColor: global.gColor.backgroundColor,
         height: 74
     },
     numberItem: {

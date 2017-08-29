@@ -1,23 +1,15 @@
 import React from 'react'
 import {
     View,
-    Text,
-    ListView,
-    ActivityIndicator,
+    ScrollView,
     StyleSheet
 } from 'react-native'
 import LoadingView from '../../components/LoadingView'
-import MusicItem from './MusicItem'
-import MusicList from './MusicList'
+import MusicCell from './MusicCell'
 
 class Music extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            dataSource: new ListView.DataSource({
-                rowHasChanged: (row1, row2) => row1 !== row2
-            })
-        }
     }
 
     onPress = (movie) => {
@@ -27,14 +19,13 @@ class Music extends React.Component {
 
     renderContent = () => {
         const { music } = this.props
-        return music.loading ? <LoadingView msg= { '音乐加载中...' }/> : <MusicList
-                dataSource={this.state.dataSource.cloneWithRows(music.musics)}
-                isRefreshing={false}
-                renderItem={this.renderItem}/>
+        if (music.loading) {
+            return <LoadingView msg={'音乐加载中'}/>
+        }
+        return music.musics.map((item, i) => {
+            return <MusicCell key={i} musicItem={item} onPressHandler={this.onPress}/>
+        })
     }
-
-    renderItem = music =>
-        <MusicItem item={music} onPressHandler={this.onPress}/>
 
     componentDidMount() {
 
@@ -49,16 +40,19 @@ class Music extends React.Component {
 
     render() {
         return (
-            <View>
-                {this.renderContent()}
-            </View>
+            <ScrollView style={styles.screen}>
+                <View style={{flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-around'}}>
+                    {this.renderContent()}
+                </View>
+            </ScrollView>
         )
     }
 }
 
 const styles = StyleSheet.create({
-    loading: {
-        marginTop: 100
+    screen: {
+        width: global.gScreen.width,
+        height: global.gScreen.height,
     }
 })
 

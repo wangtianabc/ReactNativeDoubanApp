@@ -43,7 +43,7 @@ export default class Item extends React.Component {
         const Icon = Font[font]
         return (
             <View style={styles.listItem}>
-                {icon ? <Icon name={icon} size={px2dp(iconSize||20)} style={{width: 22, marginRight:5, textAlign:"center"}} color={color || "#32CD32"}/> : null}
+                {icon ? <Icon name={icon} size={px2dp(iconSize||20)} style={{width: 22, marginRight:5, textAlign:"center"}} color={color || global.gColor.themeColor}/> : null}
                 <View style={[styles.listInfo, {borderTopWidth: !first ? 1: 0}]}>
                     <View style={{flex: 1}}><Text>{name}</Text></View>
                     <View style={styles.listInfoRight}>
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     listItem: {
         height: itemHeight,
         paddingLeft: 16,
-        backgroundColor: '#fff',
+        backgroundColor: global.gColor.backgroundColor,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center'
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     },
     button: {
         height: itemHeight,
-        backgroundColor: '#fff',
+        backgroundColor: global.gColor.backgroundColor,
         justifyContent: 'center',
         alignItems: 'center'
     }
