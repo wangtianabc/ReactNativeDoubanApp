@@ -28,7 +28,7 @@ class Profile extends React.Component {
             {icon:"md-at", name:"我的评论", color:"#fc7b53"},
             {icon:"ios-cart", name:"我的积分", color:"#4da6f0"},
             {icon:"md-settings", name:"设置"},
-            {icon:"ios-outlet", name:"欢迎评分"},
+            {icon:"md-checkmark-circle", name:"登录"},
         ]
     }
 

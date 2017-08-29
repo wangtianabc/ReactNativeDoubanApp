@@ -1,7 +1,7 @@
 import { put, take, call, fork } from 'redux-saga/effects'
 import * as types from '../constans/ActionTypes'
 import Msg from '../utils/MsgUtil'
-import { Douban_Music_Url } from '../constans/Url'
+import { Douban_Url } from '../constans/Url'
 import { Request } from '../utils/RequestUtil'
 import {
     fetchMusicList,
@@ -14,7 +14,7 @@ export function* requestMusicList (loading, subUrl) {
 
         const musicList = yield call(
             Request,
-            Douban_Music_Url + subUrl,
+            Douban_Url + subUrl,
             'get'
         )
         const errorMessage = musicList.msg
