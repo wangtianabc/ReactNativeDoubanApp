@@ -32,7 +32,7 @@ class Main extends React.Component {
     render() {
         return (
             <View style={styles.mainView} >
-                <SearchInput navigation={this.props.navigation}/>
+
                 <ScrollableTabView renderTabBar={() => <DefaultTabBar tabStyle={styles.tab} textStyle={styles.tabText} />}
 
                                    locked={false}

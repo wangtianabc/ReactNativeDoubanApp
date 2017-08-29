@@ -22,7 +22,6 @@ const MainScreenNavigator = TabNavigator(
                         backgroundColor="transparent"
                         underlayColor="transparent"/>
                 ),
-                header: null,
             }
         },
         Classic: {
@@ -44,7 +43,6 @@ const MainScreenNavigator = TabNavigator(
                         backgroundColor="transparent"
                         underlayColor="transparent"/>
                 ),
-                header: null,
             },
 
         },
