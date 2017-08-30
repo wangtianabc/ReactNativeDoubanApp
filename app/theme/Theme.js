@@ -9,5 +9,6 @@ global.gScreen = {
 
 global.gColor = {
     themeColor: '#32CD32',
-    backgroundColor: '#fff'
+    backgroundColor: '#ffffff',
+    border: '#d5d5d5',
 }

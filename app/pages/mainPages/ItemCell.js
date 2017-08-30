@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: global.gColor.backgroundColor,
         padding: 10,
-        borderBottomColor: '#ddd',
+        borderBottomColor: global.gColor.border,
         borderBottomWidth: 1
     },
     title: {

@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         borderBottomWidth: 2,
-        borderBottomColor: '#ddd'
+        borderBottomColor: global.gColor.border
     },
     title: {
         fontWeight: '900',

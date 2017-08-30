@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         paddingBottom: 100
     },
     refreshControlBase: {
-        backgroundColor: 'transparent'
+        backgroundColor: global.gColor.backgroundColor
     }
 })
 

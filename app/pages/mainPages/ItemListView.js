@@ -21,7 +21,7 @@ const ItemListView = ({
                 style={styles.refreshControlBase}
                 refreshing={isRefreshing}
                 title="loading..."
-                colors={['#ffaa66cc', '#ff00ddff', '#ffffbb33', '#ffff4444']}/>
+                colors={['#ffaa66', '#ff00dd', '#ffffbb', '#ffff44']}/>
         }/>
 
 )

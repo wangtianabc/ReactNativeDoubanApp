@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
         height: 40,
         flex: 1,
         borderWidth: 1,
-        borderColor: '#999999',
+        borderColor: global.gColor.border,
         marginLeft: 20,
         marginRight: 20,
         borderRadius: 5,

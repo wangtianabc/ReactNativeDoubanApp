@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     mainView: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: '#fff',
+        backgroundColor: global.gColor.backgroundColor,
         paddingTop: 15
     },
     tab: {

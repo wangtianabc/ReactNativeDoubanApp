@@ -59,7 +59,7 @@ const MainScreenNavigator = TabNavigator(
                 marginBottom: 5,
             },
             style: {
-                backgroundColor: '#fff'
+                backgroundColor: global.gColor.backgroundColor
             },
             indicatorStyle: {
                 opacity: 0

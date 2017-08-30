@@ -44,14 +44,14 @@ const styles = StyleSheet.create({
     line: {
         width: 65,
         height: 1,
-        backgroundColor: '#DEDEDE'
+        backgroundColor: global.gColor.backgroundColor
     },
     container:{
         flex:1,
         marginTop:18,
         marginBottom:15,
         borderWidth:1,
-        borderColor:'#CCCCCC',
+        borderColor: global.gColor.border,
         borderRadius:2,
         flexDirection:'row',
         alignItems:'center',
