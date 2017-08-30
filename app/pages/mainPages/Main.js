@@ -37,7 +37,7 @@ class Main extends React.Component {
     render() {
         return (
             <View style={styles.mainView} >
-                <Menu ref='menu' config={this.props.config}/>
+                <Menu ref='menu' { ...this.props }/>
                 <ScrollableTabView renderTabBar={() => <DefaultTabBar tabStyle={styles.tab} textStyle={styles.tabText} />}
 
                                    locked={false}

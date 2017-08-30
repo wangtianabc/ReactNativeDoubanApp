@@ -22,7 +22,13 @@ const HotItemCell = ({ item, onPressHandler }) => (
             </View>
             <Text style={styles.smallFont}>导演：{item.directors[0].name}</Text>
             <Text style={styles.smallFont}>主演：{item.casts.map((v) => v.name).join('/')}</Text>
-            <Text style={styles.sawFont}>{item.collect_count}人看过</Text>
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                <Image
+                    style={{width: 14, height: 14, marginRight: 5}}
+                    source={require('../../img/ic_watch.png')}
+                />
+                <Text style={styles.sawFont}>{item.collect_count}</Text>
+            </View>
         </View>
         <View style={{flex: 0}}>
             <TouchableOpacity onPress={() => alert('付钱:'+item.id)} style={styles.ticket}>

@@ -20,7 +20,7 @@ class Menu extends React.Component {
     close = () => {
         Animated.spring(this.heightValue, {
             toValue: 0,
-            duration: 250,
+            duration: 400,
         }).start(() => this.setState({isShow: false}))
     }
 
@@ -28,7 +28,7 @@ class Menu extends React.Component {
         this.setState({isShow: true}, () => {
             Animated.spring(this.heightValue, {
                 toValue: 1,
-                duration: 250,
+                duration: 400,
             }).start()
         })
     }
