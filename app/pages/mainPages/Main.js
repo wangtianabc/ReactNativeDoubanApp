@@ -12,6 +12,7 @@ import CommingList from './CommingList'
 import USAList from './USAList'
 import Top250 from './Top250'
 import SearchInput from '../../components/SearchInput'
+import Menu from '../../components/Menu'
 
 /** Accessing React.PropTypes is no longer supported and will be removed completely in React 16.
 const propTypes = {
@@ -29,10 +30,14 @@ class Main extends React.Component {
         //console.warn(this.props)
     }
 
+    showMenu = () => {
+        this.refs.menu.show()
+    }
+
     render() {
         return (
             <View style={styles.mainView} >
-
+                <Menu ref='menu' config={this.props.config}/>
                 <ScrollableTabView renderTabBar={() => <DefaultTabBar tabStyle={styles.tab} textStyle={styles.tabText} />}
 
                                    locked={false}

@@ -10,19 +10,7 @@ import MovieDetail from '../pages/mainPages/MovieDetail'
 const MainScreenNavigator = TabNavigator(
     {
         Home: {
-            screen: HomeContainer,
-            navigationOptions: {
-                title: '电影',
-                tabBarIcon: ({tintColor}) => (
-                    <Icon name="md-film" size={25} color={tintColor}/>
-                ),
-                headerRight: (
-                    <Icon.Button
-                        name="md-add"
-                        backgroundColor="transparent"
-                        underlayColor="transparent"/>
-                ),
-            }
+            screen: HomeContainer
         },
         Classic: {
             screen: ClassicContainer
