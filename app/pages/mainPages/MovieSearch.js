@@ -18,7 +18,8 @@ class MovieSearch extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            txtValue: ''
+            txtValue: '',
+            refreshing: false
         }
     }
 
@@ -34,6 +35,22 @@ class MovieSearch extends React.Component {
         const { goBack } = this.props.navigation
         this.props.movieAction.receiveMovieSearch(false, [])  // 清空上次搜索结果
         goBack()
+    }
+
+    header = () => {
+        return <Text style={[styles.txt, { backgroundColor: 'black' }]}>这是头部</Text>
+    }
+
+    footer = () => {
+        return <Text style={[styles.txt, { backgroundColor: 'black' }]}>这是尾部</Text>
+    }
+
+    separator = () => {
+        return <View style={{ height: 1, backgroundColor: gColor.border }}/>
+    }
+
+    onRefresh = () => {
+        alert('正在刷新中.... ');
     }
 
     render() {
@@ -73,6 +90,19 @@ class MovieSearch extends React.Component {
                     this.props.loading ? <LoadingView msg={'结果加载中'}/> :
                         <FlatList
                             data={movies}
+                            ListHeaderComponent={this.header}
+                            ListFooterComponent={this.footer}
+                            ItemSeparatorComponent={this.separator}
+                            refreshing={this.state.refreshing}
+                            onRefresh={this.onRefresh}
+
+                            initialNumToRender={10}
+
+                            onEndReachedThreshold={0.01}
+                            onEndReached={(info) => {
+                                alert("滑动到底部了");
+                            }}
+
                             renderItem={(item) => {
                                 return <MovieItem item={item}/>
                             }}
@@ -136,6 +166,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingRight: 5,
         marginRight: 20,
+    },
+    txt: {
+        textAlign: 'center',
+        textAlignVertical: 'center',
+        color: 'white',
+        fontSize: 30,
     }
 })
 

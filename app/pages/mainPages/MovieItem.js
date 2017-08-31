@@ -43,8 +43,6 @@ const styles = StyleSheet.create({
         marginRight: 10,
         marginLeft: 10,
         justifyContent: 'space-between',
-        borderBottomColor: gColor.border,
-        borderBottomWidth: 1,
         backgroundColor: gColor.backgroundColor
     },
     itemImage: {
