@@ -9,7 +9,7 @@ class HomeContainer extends React.Component {
     constructor(props) {
         super(props)
         this.config = [
-            {name: '电影搜索', icon: 'md-search'},
+            {name: '电影搜索', icon: 'md-search', screen: 'MovieSearch'},
             {name: '我的位置', icon: 'md-locate'},
             {name: '条码扫描', icon: 'md-qr-scanner'},
         ]

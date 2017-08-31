@@ -5,6 +5,13 @@
 export  const REQUEST_HOT_MOVIE_LIST = 'REQUEST_HOT_MOVIE_LIST'
 export  const FETCH_HOT_MOVIE_LIST = 'FETCH_HOT_MOVIE_LIST'
 export  const RECEIVE_HOT_MOVIE_LIST = 'RECEIVE_HOT_MOVIE_LIST'
+/**搜索电影列表
+ *
+ * @type {string}
+ */
+export  const REQUEST_MOVIE_SEARCH = 'REQUEST_MOVIE_SEARCH'
+export  const FETCH_MOVIE_SEARCH = 'FETCH_MOVIE_SEARCH'
+export  const RECEIVE_MOVIE_SEARCH = 'RECEIVE_MOVIE_SEARCH'
 /**获取即将上映列表
  *
  * @type {string}

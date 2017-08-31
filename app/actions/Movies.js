@@ -111,3 +111,26 @@ export function receiveTOPMovieList(isRefreshing, loading, topMovieList) {
         topMovieList
     }
 }
+
+export function requestMovieSearch(loading, subUrl = '') {
+    return {
+        type: types.REQUEST_MOVIE_SEARCH,
+        loading,
+        subUrl
+    }
+}
+
+export function fetchMovieSearch(loading) {
+    return {
+        type: types.FETCH_MOVIE_SEARCH,
+        loading
+    }
+}
+
+export function receiveMovieSearch(loading, resultMovies) {
+    return {
+        type: types.RECEIVE_MOVIE_SEARCH,
+        loading,
+        resultMovies
+    }
+}

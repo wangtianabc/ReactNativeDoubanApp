@@ -7,7 +7,8 @@ const initState = {
     movies: [],
     commingMovies: [],
     usaMovies: [],
-    topMovies: []
+    topMovies: [],
+    resultMovies: [],
 }
 
 const movieReducer = (state=initState, action) => {
@@ -67,6 +68,17 @@ const movieReducer = (state=initState, action) => {
                 isRefreshing: action.isRefreshing,
                 loading: action.loading,
                 topMovies: action.topMovieList
+            }
+        case types.FETCH_MOVIE_SEARCH:
+            return {
+                ...state,
+                loading: action.loading,
+            }
+        case types.RECEIVE_MOVIE_SEARCH:
+            return {
+                ...state,
+                loading: action.loading,
+                resultMovies: action.resultMovies
             }
         default:
             return state

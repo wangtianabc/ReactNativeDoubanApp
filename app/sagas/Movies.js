@@ -11,7 +11,9 @@ import {
     fetchUSAMovieList,
     receiveUSAMovieList,
     fetchTOPMovieList,
-    receiveTOPMovieList
+    receiveTOPMovieList,
+    fetchMovieSearch,
+    receiveMovieSearch
 } from '../actions/Movies'
 
 export function* requestHotMovieList (isRefreshing, loading, isLoadMore, subUrl) {
@@ -151,6 +153,39 @@ export function* watchRequestTOPMovieList() {
             isRefreshing,
             loading,
             isLoadMore,
+            subUrl
+        )
+    }
+}
+
+export function* requestMovieSearch (loading, subUrl) {
+    try{
+        yield put(fetchMovieSearch(loading))
+        const resultMovies = yield call(
+            Request,
+            Douban_Url + subUrl,
+            'get'
+        )
+        const errorMessage = resultMovies.msg
+        if (errorMessage && errorMessage !=='') {
+            yield Msg.showShort(errorMessage)
+        } else {
+            yield  put(receiveMovieSearch(false, resultMovies.subjects))
+        }
+    } catch (error) {
+        yield put(receiveTOPMovieList(false, []))
+        Msg.showShort('未取到数据，请重试')
+    }
+}
+
+export function* watchRequestMovieSearch() {
+    while (true) {
+        const { loading, subUrl } = yield take(
+            types.REQUEST_MOVIE_SEARCH
+        )
+        yield fork(
+            requestMovieSearch,
+            loading,
             subUrl
         )
     }

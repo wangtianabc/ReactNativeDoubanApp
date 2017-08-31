@@ -4,7 +4,8 @@ import {
     watchRequestHotMovieList,
     watchRequestCommingMovieList,
     watchRequestUSAMovieList,
-    watchRequestTOPMovieList
+    watchRequestTOPMovieList,
+    watchRequestMovieSearch
 } from './Movies'
 import { watchRequestMusicList } from './Musics'
 import { watchRequestBookList } from './Books'
@@ -16,6 +17,7 @@ export default function* rootSaga() {
         fork(watchRequestUSAMovieList),
         fork(watchRequestTOPMovieList),
         fork(watchRequestMusicList),
-        fork(watchRequestBookList)
+        fork(watchRequestBookList),
+        fork(watchRequestMovieSearch)
     ]
 }

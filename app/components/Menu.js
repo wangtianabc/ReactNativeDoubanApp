@@ -33,15 +33,21 @@ class Menu extends React.Component {
         })
     }
 
+    onMenuClick(screen) {
+        const { navigate } = this.props.navigation
+        navigate(screen)
+        this.setState({isShow: false})
+    }
+
     renderMenu = (item, key) => {
 
         const { config } = this.props
 
         const isLastItem = key === config.length - 1
         return (
-            <TouchableOpacity key={`${item.name}-${key}`} activeOpacity={0.75} style={[styles.menuItem, isLastItem && {borderBottomWidth: 0}]} onPress={() => {alert(item.name), this.setState({isShow: false})}}>
+            <TouchableOpacity key={`${item.name}-${key}`} activeOpacity={0.75} style={[styles.menuItem, isLastItem && {borderBottomWidth: 0}]} onPress={() => {this.onMenuClick(item.screen)}}>
                 <Icon name={item.icon} size={20} color='#ffffff'/>
-                <Text style={{color: '#fff', fontSize: 13, marginLeft: 15}}>{item.name}</Text>
+                <Text style={{color: '#ffffff', fontSize: 13, marginLeft: 15}}>{item.name}</Text>
             </TouchableOpacity>
         )
     }

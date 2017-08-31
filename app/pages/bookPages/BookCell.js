@@ -10,7 +10,7 @@ import {
 const BookCell = ({bookItem, onPressHandler}) => (
     <TouchableOpacity onPress={() => onPressHandler(bookItem)}>
         <View style={styles.containerItem}>
-            <Image style={styles.itemImg} source={{uri: bookItem.images.medium}}/>
+            <Image style={styles.itemImg} source={{uri: bookItem.images.large}}/>
             <View style={styles.itemRightContent}>
                 <Text style={styles.title}>
                     {bookItem.title}
@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
         color: 'black'
     },
     itemImg: {
-        width: 80,
-        height: 120,
+        width: 61.8,
+        height: 100,
         marginRight: 10
     },
     itemRightContent: {

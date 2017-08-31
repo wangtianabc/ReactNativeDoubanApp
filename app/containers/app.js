@@ -5,7 +5,7 @@ import HomeContainer from './HomeContainer'
 import MyInfoContainer from './MyInfoContainer'
 import BookContainer from './BookContainer'
 import ClassicContainer from './ClassicContainer'
-import MovieDetail from '../pages/mainPages/MovieDetail'
+import MovieDetail from '../pages/mainPages/MovieWebDetail'
 import MovieSearch from '../pages/mainPages/MovieSearch'
 
 const MainScreenNavigator = TabNavigator(
