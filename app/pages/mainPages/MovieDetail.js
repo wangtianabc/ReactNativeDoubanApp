@@ -6,6 +6,9 @@ import {
     StyleSheet,
     Image
 } from 'react-native'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import * as movieCreators from '../../actions/Movies'
 
 class MovieDetail extends React.Component {
     constructor(props) {
@@ -43,4 +46,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default MovieDetail
+export default connect(mapStateToProps, mapDispatchToProps)(MovieDetail)

@@ -22,7 +22,10 @@ class MovieItem extends React.Component {
                 </View>
                 <View style={{marginLeft: 10,flex: 1}}>
                     <Text>{item.title}</Text>
-                    <Text style={styles.itemDesc}>{item.rating.average}/{item.year}/{item.genres}</Text>
+                    <View style={{flexDirection: 'row'}}>
+                        <Text style={[styles.itemDesc, {color: '#ED9121'}]}>{item.rating.average}/</Text>
+                        <Text style={styles.itemDesc}>{item.year}/{item.genres}</Text>
+                    </View>
                 </View>
                 <View>
                     <Icon style={{marginLeft: 10, marginRight: 10}} name="ios-arrow-forward-outline" size={18} color="#bbb"/>
