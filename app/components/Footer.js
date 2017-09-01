@@ -8,7 +8,7 @@ import {
 
 const Footer = () => (
     <View style={styles.container}>
-        <ActivityIndicator size="small" color="32CD32"/>
+        <ActivityIndicator size="small" color={gColor.themeColor}/>
         <Text style={styles.footerText}>数据加载中...</Text>
     </View>
 )

@@ -13,6 +13,7 @@ import { connect } from 'react-redux'
 import * as movieCreators from '../../actions/Movies'
 import LoadingView from '../../components/LoadingView'
 import MovieItem from './MovieItem'
+import Footer from '../../components/Footer'
 
 class MovieSearch extends React.Component {
     constructor(props) {
@@ -43,6 +44,7 @@ class MovieSearch extends React.Component {
     }
 
     header = () => {
+        /*
         if(this.props.loading){
             this.setState({headerFlag: true})
             setTimeout(() => {this.setState({headerFlag: false})}, 10000)
@@ -51,10 +53,12 @@ class MovieSearch extends React.Component {
             return <Text style={styles.info}>加载数据{this.props.resultMovies.length}条</Text>
         }else {
             return null
-        }
+        }*/
+        return null
     }
 
     footer = () => {
+        /*
         if(this.props.loadMore) {
             return <Text style={styles.info}>数据加载中。。。</Text>
         }else {
@@ -62,7 +66,8 @@ class MovieSearch extends React.Component {
                 setTimeout(() => {this.setState({footerFlag: false})}, 3000)
             }
             return this.state.footerFlag ? <Text style={styles.info}>数据加载中。。。</Text> : null
-        }
+        }*/
+        return this.props.loadMore ?  <Footer/> : <Text style={styles.info}>别刷了，没有数据了！</Text>
     }
 
     separator = () => {
