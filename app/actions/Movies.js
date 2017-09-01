@@ -112,25 +112,32 @@ export function receiveTOPMovieList(isRefreshing, loading, topMovieList) {
     }
 }
 
-export function requestMovieSearch(loading, subUrl = '') {
+export function requestMovieSearch(loading, subUrl = '', isRefreshing, isLoadMore) {
     return {
         type: types.REQUEST_MOVIE_SEARCH,
         loading,
-        subUrl
+        subUrl,
+        isRefreshing,
+        isLoadMore
     }
 }
 
-export function fetchMovieSearch(loading) {
+export function fetchMovieSearch(loading, isRefreshing, isLoadMore) {
     return {
         type: types.FETCH_MOVIE_SEARCH,
-        loading
+        loading,
+        isRefreshing,
+        isLoadMore
     }
 }
 
-export function receiveMovieSearch(loading, resultMovies) {
+export function receiveMovieSearch(loading, resultMovies, total, isRefreshing, isLoadMore) {
     return {
         type: types.RECEIVE_MOVIE_SEARCH,
         loading,
-        resultMovies
+        resultMovies,
+        total,
+        isRefreshing,
+        isLoadMore,
     }
 }

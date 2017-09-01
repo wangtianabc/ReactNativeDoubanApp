@@ -158,9 +158,9 @@ export function* watchRequestTOPMovieList() {
     }
 }
 
-export function* requestMovieSearch (loading, subUrl) {
+export function* requestMovieSearch (loading, subUrl, isRefreshing, isLoadMore) {
     try{
-        yield put(fetchMovieSearch(loading))
+        yield put(fetchMovieSearch(loading, isRefreshing, isLoadMore))
         const resultMovies = yield call(
             Request,
             Douban_Url + subUrl,
@@ -170,23 +170,36 @@ export function* requestMovieSearch (loading, subUrl) {
         if (errorMessage && errorMessage !=='') {
             yield Msg.showShort(errorMessage)
         } else {
-            yield  put(receiveMovieSearch(false, resultMovies.subjects))
+
+            const movies = resultMovies.subjects
+
+            if (movies !== undefined && movies.length > 0) {
+                /*指定每个元素的key，消除virtualizedList 的key警告*/
+                for (var i=0; i<movies.length; i++) {
+                    var obj = {'key': movies[i].id}
+                    Object.assign(movies[i], obj)
+                }
+            }
+
+            yield  put(receiveMovieSearch(false, movies, resultMovies.total, false, false))
         }
     } catch (error) {
-        yield put(receiveTOPMovieList(false, []))
+        yield put(receiveTOPMovieList(false, [], 0, false, false))
         Msg.showShort('未取到数据，请重试')
     }
 }
 
 export function* watchRequestMovieSearch() {
     while (true) {
-        const { loading, subUrl } = yield take(
+        const { loading, subUrl, isRefreshing, isLoadMore } = yield take(
             types.REQUEST_MOVIE_SEARCH
         )
         yield fork(
             requestMovieSearch,
             loading,
-            subUrl
+            subUrl,
+            isRefreshing,
+            isLoadMore
         )
     }
 }
