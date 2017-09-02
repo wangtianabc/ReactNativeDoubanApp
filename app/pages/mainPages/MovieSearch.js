@@ -43,31 +43,45 @@ class MovieSearch extends React.Component {
         goBack()
     }
 
-    header = () => {
-        /*
-        if(this.props.loading){
+    componentWillReceiveProps(nextProps) {
+        if((this.props.loading && !nextProps.loading) || (this.props.isRefreshing && !nextProps.isRefreshing)){
             this.setState({headerFlag: true})
-            setTimeout(() => {this.setState({headerFlag: false})}, 10000)
+            setTimeout(() => {this.setState({headerFlag: false})}, 3000)
         }
-        if(this.state.headerFlag && !this.props.loading){
+    }
+
+    /**  生命周期调研
+    componentWillMount() {
+        alert('will mount')
+    }
+
+    componentDidMount() {
+        alert('mounted')
+    }
+
+    componentWillUnmount() {
+        alert('unmount')
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        alert('should pdated?')
+        return false
+    }
+
+    componentDidUpdate() {
+        alert('updated')
+    } */
+
+    header = () => {
+        if(this.state.headerFlag){
             return <Text style={styles.info}>加载数据{this.props.resultMovies.length}条</Text>
         }else {
             return null
-        }*/
-        return null
+        }
     }
 
     footer = () => {
-        /*
-        if(this.props.loadMore) {
-            return <Text style={styles.info}>数据加载中。。。</Text>
-        }else {
-            if(this.state.footerFlag) {
-                setTimeout(() => {this.setState({footerFlag: false})}, 3000)
-            }
-            return this.state.footerFlag ? <Text style={styles.info}>数据加载中。。。</Text> : null
-        }*/
-        return this.props.loadMore ?  <Footer/> : <Text style={styles.info}>别刷了，没有数据了！</Text>
+        return this.props.loadMore ?  <Footer/> : (this.props.resultMovies.length > 0 ? <Text style={styles.info}>别刷了，没有数据了！</Text> : null)
     }
 
     separator = () => {
@@ -93,6 +107,7 @@ class MovieSearch extends React.Component {
                         <Icon name="md-search" size={20} color="#8B8B8B" style={styles.icon} backgroundColor="transparent" underlayColor="transparent"/>
                         <View style={{flex: 1}}>
                             <TextInput
+                                style={styles.textInput}
                                 placeholder="电影搜索"
                                 autoFocus={true}
                                 underlineColorAndroid = {'transparent'}
@@ -181,7 +196,7 @@ const styles = StyleSheet.create({
     },
     textInput: {
         flex: 1,
-        fontSize: 10,
+        fontSize: 12,
         backgroundColor: gColor.backgroundColor,
     },
     cancel: {

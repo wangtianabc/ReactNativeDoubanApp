@@ -7,7 +7,7 @@ import BookContainer from './BookContainer'
 import ClassicContainer from './ClassicContainer'
 import MovieDetail from '../pages/mainPages/MovieWebDetail'
 import MovieSearch from '../pages/mainPages/MovieSearch'
-import Discover from './Discover'
+import DiscoverContainer from './DiscoverContainer'
 
 const MainScreenNavigator = TabNavigator(
     {
@@ -21,7 +21,7 @@ const MainScreenNavigator = TabNavigator(
             screen: BookContainer
         },
         Discover: {
-            screen: Discover
+            screen: DiscoverContainer
         },
         MyInfo: {
             screen: MyInfoContainer,

@@ -21,7 +21,7 @@ class HotList extends React.Component {
 
     componentDidMount() {
         const { movieAction } = this.props
-        movieAction.requestHotMovieList(true, true, false, '/movie/in_theaters')
+        //movieAction.requestHotMovieList(true, true, false, '/movie/in_theaters')
     }
     refreshData = () => {
 

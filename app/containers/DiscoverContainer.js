@@ -4,8 +4,9 @@ import {
     View
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
+import Discover from '../pages/discoverPages/Discover'
 
-class Discover extends React.Component {
+class DiscoverContainer extends React.Component {
     constructor(props) {
         super(props)
     }
@@ -19,13 +20,9 @@ class Discover extends React.Component {
 
 
     render() {
-        return (
-            <View>
-                <Text>发现</Text>
-            </View>
-        )
+        return <Discover/>
     }
 }
 
 
-export default Discover
+export default DiscoverContainer
