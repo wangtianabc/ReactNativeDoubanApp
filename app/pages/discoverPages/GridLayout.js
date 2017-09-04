@@ -73,7 +73,7 @@ class GridLayout extends React.PureComponent{
         return(
             <View style={{backgroundColor: '#aaaaff'}}>
                 <Text>
-                    我是listHeader
+                    listHeader
                 </Text>
             </View>
         )
@@ -82,9 +82,14 @@ class GridLayout extends React.PureComponent{
         return(
             <View style={{backgroundColor: '#aaaaff'}}>
                 <Text>
-                    我是listFooter
+                    listFooter
                 </Text>
             </View>
+        )
+    }
+    separatorComponent = () => {
+        return(
+            <View style={{backgroundColor: '#ff5f3e'}}><Text>separator</Text></View>
         )
     }
     //参数需要{}修饰，告诉是个对象
@@ -119,6 +124,7 @@ class GridLayout extends React.PureComponent{
                          ListFooterComponent={this.listFooterComponent}
                          ListHeaderComponent={this.listHeaderComponent}
                          renderSectionHeader={this.renderSectionHeader}
+                         SectionSeparatorComponent={this.separatorComponent}
                          showsVerticalScrollIndicator={false}
                          keyExtractor = {this.extraUniqueKey}
                          sections={
