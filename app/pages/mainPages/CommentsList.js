@@ -23,6 +23,7 @@ class CommentsList extends React.Component {
         let formData = new FormData()
         formData.append('apikey','0b2bdeda43b5688921839c8ecb20399b',)
         formData.append('city','北京')
+        
         axios.post(`${Douban_Url}/movie/subject/${id}/comments`, formData).then(res => {
             this.setState({
                 loadingCommnets: false,

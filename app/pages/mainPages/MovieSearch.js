@@ -80,6 +80,11 @@ class MovieSearch extends React.Component {
         }
     }
 
+    onSlectMovie = (movie) => {
+        const { navigate } = this.props.navigation
+        navigate('MovieDetail', {movie})
+    }
+
     footer = () => {
         return this.props.loadMore ?  <Footer/> : (this.props.resultMovies.length > 0 ? <Text style={styles.info}>别刷了，没有数据了！</Text> : null)
     }
@@ -139,7 +144,7 @@ class MovieSearch extends React.Component {
                             onEndReached={this.onLoadMore}
 
                             renderItem={(item) => {
-                                return <MovieItem item={item}/>
+                                return <MovieItem item={item} onPressHandler={this.onSlectMovie}/>
                             }}
                             style={{marginTop: 10}}
                         />

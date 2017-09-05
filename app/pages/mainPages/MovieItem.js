@@ -15,8 +15,9 @@ class MovieItem extends React.Component {
 
     render() {
         const { item } = this.props.item
+        const { onPressHandler } = this.props
         return(
-            <TouchableOpacity style={styles.container} key={this.props.index}>
+            <TouchableOpacity style={styles.container} key={this.props.index} onPress={() => onPressHandler(item)}>
                 <View style={{marginRight: 15}}>
                     <Image source={{uri: item.images.small}} style={styles.itemImage}/>
                 </View>
