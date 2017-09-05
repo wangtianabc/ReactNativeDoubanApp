@@ -18,16 +18,20 @@
 >6. sagas
 
 ## 预览图：
-<center class="half">
-<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/1.png" width = "300" alt="iphone"  />
-<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/2.png" width = "300" alt="iphone"  />
-<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/3.png" width = "300" alt="iphone"  />
-<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/4.png" width = "300" alt="iphone"  />
-<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/5.png" width = "300" alt="iphone"  />
-<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/6.png" width = "300" alt="iphone"  />
-<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/7.png" width = "300" alt="iphone"  />
-<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/8.png" width = "300" alt="iphone"  />
- </center >
+<div align="center">
+<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/1.png" width="250" alt="iphone"  />
+<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/2.png" width="250" alt="iphone"  />
+<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/3.png" width="250" alt="iphone"  />
+</div>
+<div align="center">
+<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/4.png" width = "250" alt="iphone"  />
+<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/5.png" width = "250" alt="iphone"  />
+<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/6.png" width = "250" alt="iphone"  />
+</div>
+<div align="center">
+<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/7.png" width = "250" alt="iphone"  />
+<img src="https://github.com/wangtianabc/ReactNativeDoubanApp/raw/master/screen/8.png" width = "250" alt="iphone"  />
+ </div>
 
 ## 参考学习:
 >1. https://github.com/jianxiaoBai/douban
