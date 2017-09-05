@@ -74,9 +74,9 @@ class MovieDetail extends React.Component {
                                    tabBarActiveTextColor={global.gColor.themeColor}
                                    tabBarInactiveTextColor='#959595'
                 >
-                    <ScrollView  tabLabel='短评'>
+                    <View  tabLabel='短评' style={{height: gScreen.height}}>
                         <CommentsList id={this.state.movie.id} ref="commentsList"/>
-                    </ScrollView>
+                    </View>
                     <ScrollView tabLabel='长评'>
                         <Text>长评</Text>
                     </ScrollView>
@@ -87,7 +87,7 @@ class MovieDetail extends React.Component {
 
     render() {
         return (
-            <ScrollView>
+            <ScrollView style={{height: 420}}>
                 {this.renderContent()}
             </ScrollView>
         )
