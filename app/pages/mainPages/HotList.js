@@ -28,7 +28,7 @@ class HotList extends React.Component {
     }
     onPress = (movie) => {
         const { navigate } = this.props.navigation
-        navigate('MovieDetail', {movie})
+        navigate('Detail', {movie})
     }
 
     renderItem = movie =>

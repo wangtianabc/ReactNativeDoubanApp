@@ -6,6 +6,7 @@ import MyInfoContainer from './MyInfoContainer'
 import BookContainer from './BookContainer'
 import ClassicContainer from './ClassicContainer'
 import MovieDetail from '../pages/mainPages/MovieWebDetail'
+import Detail from '../pages/mainPages/MovieDetail'
 import MovieSearch from '../pages/mainPages/MovieSearch'
 import DiscoverContainer from './DiscoverContainer'
 
@@ -73,6 +74,9 @@ const App = StackNavigator(
         },
         MovieSearch: {
             screen: MovieSearch
+        },
+        Detail: {
+            screen: Detail
         }
     },
     {
