@@ -21,7 +21,7 @@ class Row extends React.Component {
         return(
             <TouchableOpacity style={styles.row} onPress={this.rowClick}>
                 <View style={{flex:1, alignItems: 'center', justifyContent: 'center', backgroundColor: gColor.backgroundColor}}>
-                    <View style={{width: gScreen.width/4-20, height: gScreen.width/4-20,borderStyle: 'dotted', borderWidth: 1, borderColor: gColor.border, borderRadius: 5, alignItems: 'center', justifyContent: 'center',}}>
+                    <View style={{width: gScreen.width/4-20, height: gScreen.width/4-20, borderWidth: 1, borderColor: gColor.border, borderRadius: 5, alignItems: 'center', justifyContent: 'center',}}>
                         <Icon name={this.props.data.icon} size={30} color={gColor.themeColor}/>
                         <Text>
                             {this.props.data.name}
@@ -125,10 +125,10 @@ class GridLayout extends React.PureComponent{
         return(
             <SectionList style={styles.sectionList}
                          renderItem={this.renderItem}
-                         ListFooterComponent={this.listFooterComponent}
-                         ListHeaderComponent={this.listHeaderComponent}
+                         //ListFooterComponent={this.listFooterComponent}
+                         //ListHeaderComponent={this.listHeaderComponent}
                          renderSectionHeader={this.renderSectionHeader}
-                         SectionSeparatorComponent={this.separatorComponent}
+                         //SectionSeparatorComponent={this.separatorComponent}
                          showsVerticalScrollIndicator={false}
                          keyExtractor = {this.extraUniqueKey}
                          sections={
