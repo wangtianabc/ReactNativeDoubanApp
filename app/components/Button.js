@@ -12,10 +12,11 @@ class Button extends React.Component {
     }
 
     render() {
+        const { name, onPress } = this.props
         return Platform.OS === 'ios' ? (
             <TouchableHighlight {... this.props}>{this.props.children}</TouchableHighlight>
         ) : (
-            <View {...this.props}><TouchableNativeFeedback onPress={this.props.onPress}>{this.props.children}</TouchableNativeFeedback></View>
+            <View {...this.props}><TouchableNativeFeedback onPress={() => onPress(name)}>{this.props.children}</TouchableNativeFeedback></View>
         )
     }
 }

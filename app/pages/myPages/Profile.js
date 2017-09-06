@@ -37,8 +37,12 @@ class Profile extends React.Component {
             if(i%3 === 0) {
                 item.first = true
             }
-            return <Item key={i} {...item}/>
+            return <Item key={i} {...item} onPress={this.onPressItem}/>
         })
+    }
+
+    onPressItem = (item) => {
+        alert(item)
     }
 
     render() {

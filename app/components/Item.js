@@ -57,9 +57,9 @@ export default class Item extends React.Component {
     }
 
     render() {
-        let { onPress, first, disable } = this.props
+        let { onPress, first, disable, name } = this.props
         onPress = onPress || (() => {})
-        return disable ? this.renderContent() : <Button style={{marginTop: first? 10 : 0}} onPress={onPress}>{this.renderContent()}</Button>
+        return disable ? this.renderContent() : <Button style={{marginTop: first? 10 : 0}} name={name} onPress={onPress}>{this.renderContent()}</Button>
     }
 }
 

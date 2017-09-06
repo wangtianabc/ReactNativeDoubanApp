@@ -21,7 +21,7 @@ class DiscoverContainer extends React.Component {
 
 
     render() {
-        return <GridLayout/>
+        return <GridLayout {...this.props}/>
     }
 }
 

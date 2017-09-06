@@ -9,6 +9,7 @@ import MovieDetail from '../pages/mainPages/MovieWebDetail'
 import Detail from '../pages/mainPages/MovieDetail'
 import MovieSearch from '../pages/mainPages/MovieSearch'
 import DiscoverContainer from './DiscoverContainer'
+import AnimatedDemo from '../pages/Animated/Demo1'
 
 const MainScreenNavigator = TabNavigator(
     {
@@ -77,6 +78,9 @@ const App = StackNavigator(
         },
         Detail: {
             screen: Detail
+        },
+        Demo: {
+            screen: AnimatedDemo
         }
     },
     {
