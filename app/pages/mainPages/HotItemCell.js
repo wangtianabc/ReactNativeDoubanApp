@@ -22,7 +22,7 @@ const HotItemCell = ({ item, onPressHandler }) => (
             </View>
             <Text style={styles.smallFont}>导演：{item.directors[0].name}</Text>
             <Text style={styles.smallFont}>主演：{item.casts.map((v) => v.name).join('/')}</Text>
-            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 5}}>
                 <Image
                     style={{width: 14, height: 14, marginRight: 5}}
                     source={require('../../img/ic_watch.png')}
@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
         fontSize: 12
     },
     sawFont: {
-        lineHeight: 20,
-        fontSize: 13
+        lineHeight: 14,
+        fontSize: 13,
     },
     itemRightContent: {
         flex: 1,

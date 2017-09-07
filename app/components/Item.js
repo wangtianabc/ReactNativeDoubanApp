@@ -6,7 +6,7 @@ import {
     StyleSheet
 } from 'react-native'
 import Button from './Button'
-import px2dp from '../utils/utils'
+import { px2dp } from '../utils/utils'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 

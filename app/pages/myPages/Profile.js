@@ -9,7 +9,7 @@ import {
     TouchableWithoutFeedback,
     RefreshControl
 } from 'react-native'
-import px2dp from '../../utils/utils'
+import { px2dp } from '../../utils/utils'
 import Item from '../../components/Item'
 import Icon from 'react-native-vector-icons/Ionicons'
 

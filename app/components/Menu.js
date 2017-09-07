@@ -7,6 +7,7 @@ import {
     TouchableOpacity
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
+import { updateApp } from '../utils/utils'
 
 class Menu extends React.Component {
     heightValue = new Animated.Value(0)
@@ -33,9 +34,14 @@ class Menu extends React.Component {
         })
     }
 
-    onMenuClick(screen) {
-        const { navigate } = this.props.navigation
-        navigate(screen)
+    onMenuClick(item) {
+        if(item.type === 'direct' && item.screen !== undefined) {
+            const { navigate } = this.props.navigation
+            navigate(item.screen)
+        } else if(item.type === 'action'){
+            updateApp('Sv-1JRSkhnH8qpE4fK0-aKZPU8186f925c1f-c880-4438-8e0f-38a9bf6719bf')
+        }
+
         this.setState({isShow: false})
     }
 
@@ -45,7 +51,7 @@ class Menu extends React.Component {
 
         const isLastItem = key === config.length - 1
         return (
-            <TouchableOpacity key={`${item.name}-${key}`} activeOpacity={0.75} style={[styles.menuItem, isLastItem && {borderBottomWidth: 0}]} onPress={() => {this.onMenuClick(item.screen)}}>
+            <TouchableOpacity key={`${item.name}-${key}`} activeOpacity={0.75} style={[styles.menuItem, isLastItem && {borderBottomWidth: 0}]} onPress={() => {this.onMenuClick(item)}}>
                 <Icon name={item.icon} size={20} color='#ffffff'/>
                 <Text style={{color: '#ffffff', fontSize: 13, marginLeft: 15}}>{item.name}</Text>
             </TouchableOpacity>
