@@ -1,4 +1,6 @@
 import React from 'react'
+import { Platform } from 'react-native'
+import { Android_Key, IOS_Key } from '../constans/Url'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Main from '../pages/mainPages/Main'
@@ -7,6 +9,8 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import codePush from 'react-native-code-push'
 
 let codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_RESUME }
+
+let deploymentKey = Platform.OS === 'ios' ? IOS_Key : Android_Key
 
 class HomeContainer extends React.Component {
     constructor(props) {
@@ -50,7 +54,7 @@ class HomeContainer extends React.Component {
                 optionalUpdateMessage: '程序有新版本了，是否更新？',
                 title: '更新',
             },
-            deploymentKey: 'Sv-1JRSkhnH8qpE4fK0-aKZPU8186f925c1f-c880-4438-8e0f-38a9bf6719bf',
+            deploymentKey: deploymentKey,
         })
     }
 

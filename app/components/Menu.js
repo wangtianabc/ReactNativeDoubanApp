@@ -2,12 +2,16 @@ import React from 'react'
 import {
     Text,
     View,
+    Platform,
     Animated,
     StyleSheet,
     TouchableOpacity
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { updateApp } from '../utils/utils'
+import { Android_Key, IOS_Key } from '../constans/Url'
+
+let deploymentKey = Platform.OS === 'ios' ? IOS_Key : Android_Key
 
 class Menu extends React.Component {
     heightValue = new Animated.Value(0)
@@ -39,7 +43,7 @@ class Menu extends React.Component {
             const { navigate } = this.props.navigation
             navigate(item.screen)
         } else if(item.type === 'action'){
-            updateApp('Sv-1JRSkhnH8qpE4fK0-aKZPU8186f925c1f-c880-4438-8e0f-38a9bf6719bf')
+            updateApp(deploymentKey)
         }
 
         this.setState({isShow: false})
