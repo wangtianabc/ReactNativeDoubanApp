@@ -1,14 +1,10 @@
-import { Dimensions } from 'react-native'
 import codePush from 'react-native-code-push'
-
-const deviceH = Dimensions.get('window').height
-const deviceW = Dimensions.get('window').width
 import Msg from '../utils/MsgUtil'
 
 const basePx = 375
 
 export function px2dp(px){
-    return px * deviceW/basePx
+    return px * gScreen.width/basePx
 }
 
 export function updateApp (deploymentKey) {
@@ -27,6 +23,8 @@ export function updateApp (deploymentKey) {
                 installMode: codePush.InstallMode.IMMEDIATE,
             },(status) => {
                 switch (status) {
+                    case codePush.SyncStatus.DOWNLOADING_PACKAGE:
+                        Msg.showShort('正在下载更新文件...')
                     case codePush.SyncStatus.INSTALLING_UPDATE:
                         Msg.showShort('已下载完成，正在安装')
                     case codePush.SyncStatus.UPDATE_INSTALLED:
@@ -35,6 +33,6 @@ export function updateApp (deploymentKey) {
             })
         }
     }).catch((error) => {
-        console.log(error)
+        Msg.showShort('更新错误：' + error)
     })
 }

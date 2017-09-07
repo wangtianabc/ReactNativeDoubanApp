@@ -58,11 +58,11 @@ class GridLayout extends React.PureComponent{
         }))
         let group1 = [{name:'电影', icon: 'md-film'}, {name: '音乐', icon: 'md-musical-notes'},
                       {name: '图书', icon: 'md-bookmarks'}, {name: '电台', icon: 'md-radio'},
-                      {name: '同城', icon: 'md-locate'},{name: '用户', icon: 'ios-people'},
-                      {name: '日记', icon: 'md-paper'},{name: '相册', icon: 'md-photos'},
+                      {name: '同城', icon: 'md-locate'}, {name: '用户', icon: 'ios-people'},
+                      {name: '日记', icon: 'md-paper'}, {name: '相册', icon: 'md-photos'},
                       {name: '其他', icon: 'ios-more'}]
-        let group2 = [{name:'相机', icon: 'md-camera'}, {name: '位置', icon: 'md-pin'}, {name: '通讯录', icon: 'md-bookmarks'}, {name: '动画', icon: 'md-analytics'}]
-        let group3 = [{name:'电影', icon: 'md-film'}, {name: '音乐', icon: 'md-musical-notes'}, {name: '图书', icon: 'md-bookmarks'}, {name: '电台', icon: 'md-radio'}, {name: '其他', icon: 'md-keypad'}]
+        let group2 = [{name:'相机', icon: 'md-camera'}, {name: '位置', icon: 'md-pin'}, {name: '通讯录', icon: 'md-bookmarks'}, {name: '动画', icon: 'md-analytics'}, {name: '其他', icon: 'ios-more'}]
+        let group3 = [{name:'微信', icon: 'ios-chatbubbles'}, {name: '余额', icon: 'md-card'}, {name: '朋友圈', icon: 'md-aperture'}, {name: '收藏', icon: 'md-folder-open'}, {name: '其他', icon: 'ios-more'}]
         //这里面的data属性后面跟数组，是为了在布局renderItem的时候可以传入的参数item是数组，而不是data1这个对象
         this.state = {
             rowData: [
