@@ -146,6 +146,7 @@ android {
 }
 
 dependencies {
+    compile project(':RCTWeChat')
     compile project(':react-native-camera')
     compile project(':react-native-code-push')
     compile fileTree(dir: "libs", include: ["*.jar"])
