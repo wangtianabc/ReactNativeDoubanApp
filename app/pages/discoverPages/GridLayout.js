@@ -11,10 +11,15 @@ import Icon from 'react-native-vector-icons/Ionicons'
 class Row extends React.Component {
     rowClick = () =>{
         let name = this.props.data.name
+        const { navigate } = this.props.navigation
         if (name === '动画') {
-            debugger
-            const { navigate } = this.props.navigation
             navigate('Demo')
+        }else if(name === '相机'){
+            navigate('Camera')
+        }else if(name === '位置'){
+            navigate('Location')
+        }else{
+            alert(name)
         }
     }
     render(){

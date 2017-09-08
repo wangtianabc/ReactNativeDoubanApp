@@ -10,6 +10,8 @@ import Detail from '../pages/mainPages/MovieDetail'
 import MovieSearch from '../pages/mainPages/MovieSearch'
 import DiscoverContainer from './DiscoverContainer'
 import AnimatedDemo from '../pages/Animated/Demo1'
+import CameraPage from '../pages/NativePages/CameraPlus'
+import Location from '../pages/NativePages/Location'
 
 const MainScreenNavigator = TabNavigator(
     {
@@ -81,6 +83,12 @@ const App = StackNavigator(
         },
         Demo: {
             screen: AnimatedDemo
+        },
+        Camera: {
+            screen: CameraPage
+        },
+        Location: {
+            screen: Location
         }
     },
     {

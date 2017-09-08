@@ -17,8 +17,8 @@ class HomeContainer extends React.Component {
         super(props)
         this.config = [
             {name: '电影搜索', icon: 'md-search', screen: 'MovieSearch', type: 'direct'},
-            {name: '我的位置', icon: 'md-locate', type: 'direct'},
-            {name: '条码扫描', icon: 'md-qr-scanner', type: 'direct'},
+            {name: '我的位置', icon: 'md-locate', screen: 'Location', type: 'direct'},
+            {name: '条码扫描', icon: 'md-qr-scanner',screen: 'Camera', type: 'direct'},
             {name: '程序更新', icon: 'md-arrow-round-up', type: 'action'},
         ]
     }

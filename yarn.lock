@@ -3637,6 +3637,12 @@ react-devtools-core@^2.5.0:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
+react-native-camera@^0.10.0:
+  version "0.10.0"
+  resolved "http://registry.npm.taobao.org/react-native-camera/download/react-native-camera-0.10.0.tgz#5d973c9a8aab95f68aede395ba310eae0c3cecdd"
+  dependencies:
+    prop-types "^15.5.10"
+
 react-native-code-push@^5.0.0-beta:
   version "5.0.0-beta"
   resolved "http://registry.npm.taobao.org/react-native-code-push/download/react-native-code-push-5.0.0-beta.tgz#7d182c93c945e9d5e9e7dd92dab4237ef743ed00"
