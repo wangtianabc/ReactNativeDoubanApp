@@ -4,7 +4,6 @@ import {
     View
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
-import Discover from '../pages/discoverPages/Discover'
 import GridLayout from '../pages/discoverPages/GridLayout'
 
 class DiscoverContainer extends React.Component {
