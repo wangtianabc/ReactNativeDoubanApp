@@ -73,7 +73,7 @@ class GridLayout extends React.PureComponent{
             rowData: [
                 {key: '豆瓣', data: [group1]},
                 {key: '原生', data: [group2]},
-                {key: '微信', data: [group3]}
+                {key: '微信1', data: [group3]}
             ]
         }
 
