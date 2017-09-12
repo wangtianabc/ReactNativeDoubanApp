@@ -1,4 +1,4 @@
 <resources>
     <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey"></string>
-    <string name="app_name">ReactNativeDoubanApp</string>
+    <string name="app_name">豆豆</string>
 </resources>
