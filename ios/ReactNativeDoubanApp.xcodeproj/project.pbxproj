@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -55,12 +56,12 @@
 		7DB8A44FBA3E404FADAE53AB /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D6C149828A149C49CB1B98C /* Entypo.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		850C3D87D1FE45C3B9E9CDDF /* libdouble-conversion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AFDD8DED9634131942BD732 /* libdouble-conversion.a */; };
+		97F1BE31E06E4B09ADB8FC2D /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F86AB760832A4836A22F1E4E /* libSplashScreen.a */; };
 		A7B01643C707476CADF2EE42 /* libjschelpers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43968978A08440DDA0B0524C /* libjschelpers.a */; };
 		CBCAB977BD314E93BC8BE7B2 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F894E85CB63C442A8986787F /* FontAwesome.ttf */; };
 		D007C28AD28048E3836B4B71 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E6FF13FBED547C9862EB7E3 /* MaterialCommunityIcons.ttf */; };
 		E5C19C98FFC14C2EAF1FA135 /* libyoga.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FC66D2A2C545F186FEE89D /* libyoga.a */; };
 		F457311D61144567A72E1B2C /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0399D6C4DBC8419385CC8EA6 /* EvilIcons.ttf */; };
-		97F1BE31E06E4B09ADB8FC2D /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F86AB760832A4836A22F1E4E /* libSplashScreen.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -309,6 +310,13 @@
 			remoteGlobalIDString = 10D6D7A41F160C250066F0F3;
 			remoteInfo = RCTWeChatTests;
 		};
+		6BDE7A391F6910F200017AA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D31D06636B6D44EBB6A8C74E /* SplashScreen.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D7682761D8E76B80014119E;
+			remoteInfo = SplashScreen;
+		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -370,13 +378,13 @@
 		9AFDD8DED9634131942BD732 /* libdouble-conversion.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libdouble-conversion.a"; sourceTree = "<group>"; };
 		9CA858E5A6734C2B9885F9DA /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		C6FC2090ED254E5689AB5375 /* CodePush.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
+		D31D06636B6D44EBB6A8C74E /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = SplashScreen.xcodeproj; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; };
 		DAB5CAD7F7DE4E4F89F15DEB /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		E45F9DC17938413EB72489F0 /* RCTCamera.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RCTCamera.xcodeproj"; sourceTree = "<group>"; };
 		EBCEFCC9EB62451A9CA65C7A /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		EC0C0C33D71B48E4BB66FE83 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		F86AB760832A4836A22F1E4E /* libSplashScreen.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libSplashScreen.a; sourceTree = "<group>"; };
 		F894E85CB63C442A8986787F /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
-		D31D06636B6D44EBB6A8C74E /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; name = "SplashScreen.xcodeproj"; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		F86AB760832A4836A22F1E4E /* libSplashScreen.a */ = {isa = PBXFileReference; name = "libSplashScreen.a"; path = "libSplashScreen.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -608,6 +616,14 @@
 			children = (
 				6B9949C31F640496000B2BEA /* libRCTWeChat.a */,
 				6B9949C51F640496000B2BEA /* RCTWeChatTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6BDE7A131F6910F200017AA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6BDE7A3A1F6910F200017AA7 /* libSplashScreen.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -871,6 +887,10 @@
 					ProductGroup = 6B160BEF1F48320F0087516B /* Products */;
 					ProjectRef = DAB5CAD7F7DE4E4F89F15DEB /* RNVectorIcons.xcodeproj */;
 				},
+				{
+					ProductGroup = 6BDE7A131F6910F200017AA7 /* Products */;
+					ProjectRef = D31D06636B6D44EBB6A8C74E /* SplashScreen.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1114,6 +1134,13 @@
 			remoteRef = 6B9949C41F640496000B2BEA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		6BDE7A3A1F6910F200017AA7 /* libSplashScreen.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSplashScreen.a;
+			remoteRef = 6BDE7A391F6910F200017AA7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1283,7 +1310,7 @@
 					"$(SRCROOT)..\node_modules\neact-native-code-pushiosCodePush/**",
 					"$(SRCROOT)..\node_modules\neact-native-cameraios",
 					"$(SRCROOT)/../node_modules/react-native-wechat/ios",
-					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
+					"$(SRCROOT)..\node_modules\neact-native-splash-screenios",
 				);
 				INFOPLIST_FILE = ReactNativeDoubanAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1322,7 +1349,7 @@
 					"$(SRCROOT)..\node_modules\neact-native-code-pushiosCodePush/**",
 					"$(SRCROOT)..\node_modules\neact-native-cameraios",
 					"$(SRCROOT)/../node_modules/react-native-wechat/ios",
-					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
+					"$(SRCROOT)..\node_modules\neact-native-splash-screenios",
 				);
 				INFOPLIST_FILE = ReactNativeDoubanAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1358,11 +1385,20 @@
 				DEVELOPMENT_TEAM = PA7GCL86NR;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)..\node_modules\neact-native-vector-iconsRNVectorIconsManager",
-					"$(SRCROOT)..\node_modules\neact-native-code-pushiosCodePush/**",
-					"$(SRCROOT)..\node_modules\neact-native-cameraios",
+					"$(SRCROOT)..",
+					ode_modules,
+					"eact-native-vector-iconsRNVectorIconsManager",
+					"$(SRCROOT)..",
+					ode_modules,
+					"eact-native-code-pushiosCodePush/**",
+					"$(SRCROOT)..",
+					ode_modules,
+					"eact-native-cameraios",
 					"$(SRCROOT)/../node_modules/react-native-wechat/ios",
-					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
+					"$(SRCROOT)..",
+					ode_modules,
+					"eact-native-splash-screenios",
+					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 				);
 				INFOPLIST_FILE = ReactNativeDoubanApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -1386,11 +1422,20 @@
 				DEVELOPMENT_TEAM = PA7GCL86NR;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)..\node_modules\neact-native-vector-iconsRNVectorIconsManager",
-					"$(SRCROOT)..\node_modules\neact-native-code-pushiosCodePush/**",
-					"$(SRCROOT)..\node_modules\neact-native-cameraios",
+					"$(SRCROOT)..",
+					ode_modules,
+					"eact-native-vector-iconsRNVectorIconsManager",
+					"$(SRCROOT)..",
+					ode_modules,
+					"eact-native-code-pushiosCodePush/**",
+					"$(SRCROOT)..",
+					ode_modules,
+					"eact-native-cameraios",
 					"$(SRCROOT)/../node_modules/react-native-wechat/ios",
-					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
+					"$(SRCROOT)..",
+					ode_modules,
+					"eact-native-splash-screenios",
+					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 				);
 				INFOPLIST_FILE = ReactNativeDoubanApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -1425,7 +1470,7 @@
 					"$(SRCROOT)..\node_modules\neact-native-code-pushiosCodePush/**",
 					"$(SRCROOT)..\node_modules\neact-native-cameraios",
 					"$(SRCROOT)/../node_modules/react-native-wechat/ios",
-					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
+					"$(SRCROOT)..\node_modules\neact-native-splash-screenios",
 				);
 				INFOPLIST_FILE = "ReactNativeDoubanApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1473,7 +1518,7 @@
 					"$(SRCROOT)..\node_modules\neact-native-code-pushiosCodePush/**",
 					"$(SRCROOT)..\node_modules\neact-native-cameraios",
 					"$(SRCROOT)/../node_modules/react-native-wechat/ios",
-					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
+					"$(SRCROOT)..\node_modules\neact-native-splash-screenios",
 				);
 				INFOPLIST_FILE = "ReactNativeDoubanApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1615,11 +1660,20 @@
 				DEVELOPMENT_TEAM = PA7GCL86NR;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)..\node_modules\neact-native-vector-iconsRNVectorIconsManager",
-					"$(SRCROOT)..\node_modules\neact-native-code-pushiosCodePush/**",
-					"$(SRCROOT)..\node_modules\neact-native-cameraios",
+					"$(SRCROOT)..",
+					ode_modules,
+					"eact-native-vector-iconsRNVectorIconsManager",
+					"$(SRCROOT)..",
+					ode_modules,
+					"eact-native-code-pushiosCodePush/**",
+					"$(SRCROOT)..",
+					ode_modules,
+					"eact-native-cameraios",
 					"$(SRCROOT)/../node_modules/react-native-wechat/ios",
-					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
+					"$(SRCROOT)..",
+					ode_modules,
+					"eact-native-splash-screenios",
+					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 				);
 				INFOPLIST_FILE = ReactNativeDoubanApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -1647,7 +1701,7 @@
 					"$(SRCROOT)..\node_modules\neact-native-code-pushiosCodePush/**",
 					"$(SRCROOT)..\node_modules\neact-native-cameraios",
 					"$(SRCROOT)/../node_modules/react-native-wechat/ios",
-					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
+					"$(SRCROOT)..\node_modules\neact-native-splash-screenios",
 				);
 				INFOPLIST_FILE = ReactNativeDoubanAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1693,7 +1747,7 @@
 					"$(SRCROOT)..\node_modules\neact-native-code-pushiosCodePush/**",
 					"$(SRCROOT)..\node_modules\neact-native-cameraios",
 					"$(SRCROOT)/../node_modules/react-native-wechat/ios",
-					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
+					"$(SRCROOT)..\node_modules\neact-native-splash-screenios",
 				);
 				INFOPLIST_FILE = "ReactNativeDoubanApp-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
