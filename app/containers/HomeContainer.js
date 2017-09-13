@@ -7,6 +7,7 @@ import Main from '../pages/mainPages/Main'
 import * as movieCreators from '../actions/Movies'
 import Icon from 'react-native-vector-icons/Ionicons'
 import codePush from 'react-native-code-push'
+import SplashScreen from 'react-native-splash-screen'
 
 let codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_RESUME }
 
@@ -45,6 +46,7 @@ class HomeContainer extends React.Component {
     }
 
     componentDidMount(){
+        SplashScreen.hide()
         this.props.navigation.setParams({ onMenu: this.showMenu })
         codePush(codePushOptions)
         codePush.sync({

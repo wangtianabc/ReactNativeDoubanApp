@@ -146,6 +146,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-splash-screen')
     compile project(':RCTWeChat')
     compile project(':react-native-camera')
     compile project(':react-native-code-push')
