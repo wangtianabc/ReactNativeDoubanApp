@@ -11,7 +11,7 @@ import MovieSearch from '../pages/mainPages/MovieSearch'
 import DiscoverContainer from './DiscoverContainer'
 import AnimatedDemo from '../pages/Animated/Demo1'
 import CameraPage from '../pages/NativePages/CameraPlus'
-import Location from '../pages/NativePages/Location'
+import Location from '../pages/NativePages/BaiduMap'
 
 const MainScreenNavigator = TabNavigator(
     {

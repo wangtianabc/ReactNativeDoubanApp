@@ -12,6 +12,7 @@ import com.facebook.soloader.SoLoader;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.microsoft.codepush.react.CodePush;
 import com.theweflex.react.WeChatPackage;
+import org.lovebing.reactnative.baidumap.BaiduMapPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,7 +35,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new SplashScreenReactPackage(),
+          new SplashScreenReactPackage(),
+          new BaiduMapPackage(getApplicationContext()),
 		  new WeChatPackage(),
           new RCTCameraPackage(),
           new VectorIconsPackage(),
