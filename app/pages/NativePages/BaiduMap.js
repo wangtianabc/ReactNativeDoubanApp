@@ -9,9 +9,10 @@ import {
 import {
     MapView,
     MapTypes,
+    MapModule,
 } from 'react-native-baidu-map'
 
-var Geolocation = require('Geolocation')
+const Geolocation = require('Geolocation')
 
 class BaiduMap extends React.Component {
     static navigationOptions = ({navigation}) => ({
@@ -35,13 +36,13 @@ class BaiduMap extends React.Component {
                 this.setState({
                     zoom: 18,
                     markers: [{
-                        longitude: parseFloat(location.coords.longitude),
-                        latitude: parseFloat(location.coords.latitude),
-                        title: 'I am here'
+                        longitude: location.coords.longitude,
+                        latitude: location.coords.latitude,
+                        title: '我在这里'
                     }],
                     center: {
-                        longitude: parseFloat(location.coords.longitude),
-                        latitude: parseFloat(location.coords.latitude),
+                        longitude: location.coords.longitude,
+                        latitude: location.coords.latitude,
                     }
                 })
             }, error => {alert("获取位置失败："+ error)}
@@ -83,7 +84,7 @@ class BaiduMap extends React.Component {
                                  markers: [{
                                      longitude: e.longitude,
                                      latitude: e.latitude,
-                                     title: 'I am here'
+                                     title: '想去这里'
                                  }],
                                  center: {
                                      longitude: e.longitude,
