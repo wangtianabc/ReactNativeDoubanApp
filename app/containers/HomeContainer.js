@@ -8,6 +8,8 @@ import * as movieCreators from '../actions/Movies'
 import Icon from 'react-native-vector-icons/Ionicons'
 import codePush from 'react-native-code-push'
 import SplashScreen from 'react-native-splash-screen'
+import SQLite from '../db/SQLite'
+let sqlite = new SQLite()
 
 let codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_RESUME }
 
@@ -45,7 +47,13 @@ class HomeContainer extends React.Component {
         this.refs.main.showMenu()
     }
 
+    componentWillUnmount(){
+        debugger
+        sqlite.close()
+    }
+
     componentDidMount(){
+        sqlite.createTable() //打开并创建表
         SplashScreen.hide()
         this.props.navigation.setParams({ onMenu: this.showMenu })
         codePush(codePushOptions)

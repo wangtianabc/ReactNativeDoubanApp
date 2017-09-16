@@ -8,7 +8,7 @@ import {
 } from 'react-native'
 import Star from '../../components/Star'
 
-const HotItemCell = ({ item, onPressHandler }) => (
+const HotItemCell = ({ item, onPressHandler, onSaveMovie }) => (
     <TouchableOpacity onPress={() => onPressHandler(item)} style={[styles.hotList]}>
         <View style={{flex: 1}}>
             <Image style={styles.itemImg} source={{uri: item.images.large}}/>
@@ -31,8 +31,8 @@ const HotItemCell = ({ item, onPressHandler }) => (
             </View>
         </View>
         <View style={{flex: 0}}>
-            <TouchableOpacity onPress={() => alert('付钱:'+item.id)} style={styles.ticket}>
-                <Text style={{color: '#ED9121', fontWeight: '900'}}>购票</Text>
+            <TouchableOpacity onPress={() => onSaveMovie(item)} style={styles.ticket}>
+                <Text style={{color: '#ED9121', fontWeight: '900'}}>收藏</Text>
             </TouchableOpacity>
         </View>
     </TouchableOpacity>

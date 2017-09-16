@@ -7,7 +7,8 @@ import {
 import LoadingView from '../../components/LoadingView'
 import HotItemCell from './HotItemCell'
 import ItemListView from './ItemListView'
-
+import SQLite from '../../db/SQLite'
+let sqlite = new SQLite()
 
 class HotList extends React.Component {
     constructor(props) {
@@ -31,8 +32,17 @@ class HotList extends React.Component {
         navigate('Detail', {movie})
     }
 
+    onSaveMovie = (movie) => {
+        sqlite.saveCollection(movie).then(() => {
+            alert('收藏成功')
+        }).catch(err => { console.log(err) })
+        sqlite.findCollectionByName('真假森林王').then(result => {
+            debugger
+        }).catch(err => { console.log(err) })
+    }
+
     renderItem = movie =>
-        <HotItemCell item={movie} onPressHandler={this.onPress} />
+        <HotItemCell item={movie} onPressHandler={this.onPress} onSaveMovie={this.onSaveMovie}/>
 
     renderFooter = () => {
 
