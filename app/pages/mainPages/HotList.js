@@ -36,9 +36,12 @@ class HotList extends React.Component {
         sqlite.saveCollection(movie).then(() => {
             alert('收藏成功')
         }).catch(err => { console.log(err) })
-        sqlite.findCollectionByName('真假森林王').then(result => {
+        sqlite.findCollectionByName('看不见的客人').then(result => {
             debugger
         }).catch(err => { console.log(err) })
+        sqlite.getCollectionList().then((result) => {
+            debugger
+        }).catch(err => {console.log(err)})
     }
 
     renderItem = movie =>

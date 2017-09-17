@@ -2,7 +2,6 @@ import React from 'react'
 import SQLiteStorage from 'react-native-sqlite-storage'
 
 SQLiteStorage.DEBUG(true)
-//SQLiteStorage.enablePromise(true)
 const database_name = "doudou.db"
 const database_version = "1.0"
 const database_displayname = "MySQLite"
@@ -69,7 +68,6 @@ class SQLite extends React.Component{
     }
 
     saveCollection = (movie) => {
-        debugger
         return new Promise((resolve, reject) => {
             if(!db) {
                 this.open()
@@ -95,9 +93,8 @@ class SQLite extends React.Component{
         }
 
         return new Promise((resolve,reject) => {
-            db.executeSql('SELECT * FROM ' + collectionTableName + ' where title = ? limit 1', [name],
+            db.executeSql('select * from ' + collectionTableName + ' where title = ? limit 1', [name],
                 (results) => {
-                    debugger
                     if(results.rows.length > 0){
                         resolve(results.rows.item(0))
                     }else{
@@ -114,12 +111,35 @@ class SQLite extends React.Component{
 
     }
 
+    getCollectionList = () => {
+        if(!db) {
+            this.open()
+        }
+
+        return new Promise((resolve,reject) => {
+            db.executeSql('select * from ' + collectionTableName,[],
+                (results) => {
+                    if(results.rows.length> 0){
+                        resolve(results.rows)
+                    }else{
+                        reject('nothing')
+                    }
+                    this.successCB('get collection list')
+                },
+                (err) => {
+                    reject(err)
+                    this.errorCB('get collection list', err)
+                }
+            )
+        })
+    }
+
     deleteCollectionByName = (name) => {
         if(!db) {
             this.open()
         }
         return new Promise((resolve,reject) => {
-            db.executeSql('',[name],
+            db.executeSql('delete from ' + collectionTableName + ' where name =?',[name],
                 () => {
                     resolve()
                     this.successCB('delete movie by name')
