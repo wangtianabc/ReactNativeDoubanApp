@@ -95,11 +95,13 @@ class SQLite extends React.Component{
         return new Promise((resolve,reject) => {
             db.executeSql('select * from ' + collectionTableName + ' where title = ? limit 1', [name],
                 (results) => {
+                    /*
                     if(results.rows.length > 0){
                         resolve(results.rows.item(0))
                     }else{
                         reject('not find movie')
-                    }
+                    }*/
+                    resolve(results.rows)
                     this.successCB('find movie by name')
                 },
                 (err) => {
@@ -110,6 +112,7 @@ class SQLite extends React.Component{
         })
 
     }
+
 
     getCollectionList = () => {
         if(!db) {

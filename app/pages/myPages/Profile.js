@@ -12,6 +12,9 @@ import {
 import { px2dp } from '../../utils/utils'
 import Item from '../../components/Item'
 import Icon from 'react-native-vector-icons/Ionicons'
+import SQLite from '../../db/SQLite'
+
+let sqlite = new SQLite()
 
 let {width, height} = Dimensions.get('window')
 
@@ -19,7 +22,8 @@ class Profile extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            isRefreshing: false
+            isRefreshing: false,
+            collection: []
         }
         this.config = [
             {icon:"ios-pin", name:"我的地址"},
@@ -37,7 +41,19 @@ class Profile extends React.Component {
             if(i%3 === 0) {
                 item.first = true
             }
+            if(item.name === '我的收藏') {
+                item.subName = this.state.collection.length + '条'
+            }
             return <Item key={i} {...item} onPress={this.onPressItem}/>
+        })
+    }
+
+    componentDidMount() {
+        debugger
+        sqlite.getCollectionList().then(result => {
+            if(result.length > 0) {
+                this.setState({collection: result})
+            }
         })
     }
 
