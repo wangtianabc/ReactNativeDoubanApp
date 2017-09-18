@@ -1,6 +1,7 @@
 const initState = {
     login: false,
-    userName: ''
+    userName: '',
+    collection: []
 }
 
 const loginReducer = (state = initState, action) => {
@@ -16,6 +17,11 @@ const loginReducer = (state = initState, action) => {
                 ...state,
                 login: false,
                 userName: '未登录',
+            }
+        case 'GET_COLLECTION_LIST':
+            return {
+                ...state,
+                collection: action.collections
             }
         default:
             return state

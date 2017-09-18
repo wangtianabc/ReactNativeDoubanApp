@@ -23,7 +23,6 @@ class Profile extends React.Component {
         super(props)
         this.state = {
             isRefreshing: false,
-            collection: []
         }
         this.config = [
             {icon:"ios-pin", name:"我的地址"},
@@ -36,32 +35,39 @@ class Profile extends React.Component {
         ]
     }
 
-    renderListItem = () => {
+    renderListItem = (collections) => {
         return this.config.map((item, i) => {
             if(i%3 === 0) {
                 item.first = true
             }
             if(item.name === '我的收藏') {
-                item.subName = this.state.collection.length + '条'
+                item.subName = collections.length + '条'
             }
             return <Item key={i} {...item} onPress={this.onPressItem}/>
         })
     }
 
     componentDidMount() {
-        debugger
+        const { loginAction } = this.props
         sqlite.getCollectionList().then(result => {
             if(result.length > 0) {
-                this.setState({collection: result})
+                loginAction.getCollectionList(result)
             }
         })
     }
 
-    onPressItem = (item) => {
-        alert(item)
+    onPressItem = (name) => {
+        const { collection } = this.props.login
+        if(name === '我的收藏') {
+            const { navigate } = this.props.navigation
+            navigate('CollectionList', {collection})
+        }else{
+            alert(name)
+        }
     }
 
     render() {
+        const { login } = this.props
         return (
             <View style={{flex: 1, backgroundColor: "#f3f3f3"}}>
                 <ScrollView
@@ -112,7 +118,7 @@ class Profile extends React.Component {
                             </TouchableWithoutFeedback>
                         </View>
                         <View>
-                            {this.renderListItem()}
+                            {this.renderListItem(login.collection)}
                         </View>
                     </View>
                 </ScrollView>

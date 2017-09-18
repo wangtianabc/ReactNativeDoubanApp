@@ -13,6 +13,7 @@ import com.oblador.vectoricons.VectorIconsPackage;
 import com.microsoft.codepush.react.CodePush;
 import com.theweflex.react.WeChatPackage;
 import org.lovebing.reactnative.baidumap.BaiduMapPackage;
+import org.pgsqlite.SQLitePluginPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -37,6 +38,7 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
           new SplashScreenReactPackage(),
           new BaiduMapPackage(getApplicationContext()),
+          new SQLitePluginPackage(),
 		  new WeChatPackage(),
           new RCTCameraPackage(),
           new VectorIconsPackage(),

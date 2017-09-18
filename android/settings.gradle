@@ -18,3 +18,6 @@ project(':RCTWeChat').projectDir = new File(rootProject.projectDir, '../node_mod
 
 include ':react-native-baidu-map'
 project(':react-native-baidu-map').projectDir = new File(settingsDir, '../node_modules/react-native-baidu-map/android')
+
+include ':react-native-sqlite-storage'
+project(':react-native-sqlite-storage').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-sqlite-storage/src/android')

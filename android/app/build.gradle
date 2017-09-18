@@ -102,6 +102,7 @@ android {
     defaultConfig {
         applicationId "com.reactnativedoubanapp"
         minSdkVersion 16
+        multiDexEnabled true
         targetSdkVersion 22
         versionCode 1
         versionName "1.0.0"
@@ -146,6 +147,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-sqlite-storage')
     compile project(':react-native-baidu-map')
     compile project(':react-native-splash-screen')
     compile project(':RCTWeChat')

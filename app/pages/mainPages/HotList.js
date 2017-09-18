@@ -33,9 +33,15 @@ class HotList extends React.Component {
     }
 
     onSaveMovie = (movie) => {
+        const { login, loginAction } = this.props
         sqlite.findCollectionByName(movie.title).then(result => {
             if(result.length === 0){
                 sqlite.saveCollection(movie).then(() => {
+                    sqlite.getCollectionList().then(result => {
+                        if(result.length > 0) {
+                            loginAction.getCollectionList(result)
+                        }
+                    })
                     alert('收藏成功')
                 }).catch(err => { console.log(err) })
             }else{

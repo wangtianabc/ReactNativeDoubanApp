@@ -12,6 +12,7 @@ import DiscoverContainer from './DiscoverContainer'
 import AnimatedDemo from '../pages/Animated/Demo1'
 import CameraPage from '../pages/NativePages/CameraPlus'
 import Location from '../pages/NativePages/BaiduMap'
+import CollectionList from '../pages/myPages/CollectionList'
 
 const MainScreenNavigator = TabNavigator(
     {
@@ -89,6 +90,9 @@ const App = StackNavigator(
         },
         Location: {
             screen: Location
+        },
+        CollectionList: {
+            screen: CollectionList
         }
     },
     {

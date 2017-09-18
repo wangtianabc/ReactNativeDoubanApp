@@ -40,7 +40,7 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
       </activity>
-	  <!-- ΢��Activity -->
+	  <!--Activity -->
 	  <activity
 		android:name=".wxapi.WXEntryActivity"
 		android:label="@string/app_name"

@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Main from '../pages/mainPages/Main'
 import * as movieCreators from '../actions/Movies'
+import * as loginCreators from '../actions/Login'
 import Icon from 'react-native-vector-icons/Ionicons'
 import codePush from 'react-native-code-push'
 import SplashScreen from 'react-native-splash-screen'
@@ -48,7 +49,6 @@ class HomeContainer extends React.Component {
     }
 
     componentWillUnmount(){
-        debugger
         sqlite.close()
     }
 
@@ -74,16 +74,19 @@ class HomeContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    const { movie } = state
+    const { movie,login } = state
     return {
-        movie
+        movie,
+        login
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     const movieAction = bindActionCreators(movieCreators, dispatch)
+    const loginAction = bindActionCreators(loginCreators, dispatch)
     return {
-        movieAction
+        movieAction,
+        loginAction
     }
 }
 

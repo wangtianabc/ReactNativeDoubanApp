@@ -47,3 +47,8 @@ export const RECEIVE_MUSIC_LIST = 'RECEIVE_MUSIC_LIST'
 export const REQUEST_BOOK_LIST = 'REQUEST_BOOK_LIST'
 export const FETCH_BOOK_LIST = 'FETCH_BOOK_LIST'
 export const RECEIVE_BOOK_LIST = 'RECEIVE_BOOK_LIST'
+/**
+ * 获取收藏列表
+ * @type {string}
+ */
+export const GET_COLLECTION_LIST='GET_COLLECTION_LIST'
