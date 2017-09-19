@@ -7,6 +7,9 @@ import {
     TouchableOpacity
 } from 'react-native'
 import Swipeout from 'react-native-swipeout'
+import SQLite from '../../db/SQLite'
+
+let sqlite = new SQLite()
 
 class CollectionItem extends React.Component {
     constructor(props) {
@@ -18,7 +21,7 @@ class CollectionItem extends React.Component {
                     backgroundColor:'red',
                     color:'white',
                     text:'删除',
-                    onPress: () => { alert(this.state.rowID) }
+                    onPress: () => { this.deleteCollection() }
                 },
                 {
                     backgroundColor:'green',
@@ -30,6 +33,17 @@ class CollectionItem extends React.Component {
         }
     }
 
+    deleteCollection = () => {
+        if(this.state.rowID === '') return
+        sqlite.deleteCollectionByName(this.state.rowID).then(() => {
+            this.setState({rowID: ''})
+            sqlite.getCollectionList().then(result => {
+                if(result.length > 0) {
+                    this.props.loginAction.getCollectionList(result)
+                }
+            })
+        }).catch((err) => { alert('删除错误：' + err) })
+    }
 
     render() {
         const { item } = this.props.item

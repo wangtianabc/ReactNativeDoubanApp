@@ -57,10 +57,10 @@ class Profile extends React.Component {
     }
 
     onPressItem = (name) => {
-        const { collection } = this.props.login
+        //const { collection } = this.props.login
         if(name === '我的收藏') {
             const { navigate } = this.props.navigation
-            navigate('CollectionList', {collection})
+            navigate('CollectionList')
         }else{
             alert(name)
         }

@@ -137,12 +137,12 @@ class SQLite extends React.Component{
         })
     }
 
-    deleteCollectionByName = (name) => {
+    deleteCollectionByName = (id) => {
         if(!db) {
             this.open()
         }
         return new Promise((resolve,reject) => {
-            db.executeSql('delete from ' + collectionTableName + ' where name =?',[name],
+            db.executeSql('delete from ' + collectionTableName + ' where id =?',[id],
                 () => {
                     resolve()
                     this.successCB('delete movie by name')

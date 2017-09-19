@@ -5,6 +5,9 @@ import {
     View
 } from 'react-native'
 import CollectionItem from './CollectionItem'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import * as loginCreators from '../../actions/Login'
 
 class CollectionList extends React.Component {
     static navigationOptions = ({navigation}) => ({
@@ -25,7 +28,8 @@ class CollectionList extends React.Component {
     }
 
     render() {
-        const { collection } = this.props.navigation.state.params
+        const { collection } = this.props.login
+        debugger
         let collectionArr = []
         for(let i=0; i<collection.length;i++){
             collectionArr.push(collection.item(i))
@@ -36,7 +40,7 @@ class CollectionList extends React.Component {
                           ItemSeparatorComponent={this.separator}
                           keyExtractor = {this.extraUniqueKey}
                           renderItem={(item) => {
-                              return <CollectionItem item={item}/>
+                              return <CollectionItem item={item} {...this.props}/>
                           }}
                           style={{marginTop: 5}}
                 />
@@ -49,9 +53,23 @@ const styles = StyleSheet.create({
     container: {
         paddingTop: 5,
         backgroundColor: gColor.backgroundColor,
-        //height: gScreen.height,
-        //marginBottom: 50
+        height: gScreen.height-70,
+        paddingBottom: 10
     }
 })
 
-export default CollectionList
+const mapStateToProps = (state) => {
+    const { login } = state
+    return {
+        login
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    const loginAction = bindActionCreators(loginCreators, dispatch)
+    return {
+        loginAction
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CollectionList)
