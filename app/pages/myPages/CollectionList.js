@@ -42,7 +42,7 @@ class CollectionList extends React.Component {
                           renderItem={(item) => {
                               return <CollectionItem item={item} {...this.props}/>
                           }}
-                          style={{marginTop: 5}}
+                          style={{marginTop: 0}}
                 />
             </View>
         )
@@ -51,10 +51,8 @@ class CollectionList extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 5,
         backgroundColor: gColor.backgroundColor,
-        height: gScreen.height-70,
-        paddingBottom: 10
+        height: gScreen.height-60,
     }
 })
 
