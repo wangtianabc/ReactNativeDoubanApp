@@ -16,7 +16,7 @@ class CollectionItem extends React.Component {
         super(props)
         this.state = {
             rowID: '',
-            Rightbuttons:[
+            rightButtons:[
                 {
                     backgroundColor:'red',
                     color:'white',
@@ -30,6 +30,14 @@ class CollectionItem extends React.Component {
                     onPress: () => { alert('转往页面') }
                 }
             ],
+            leftButtons: [
+                {
+                    backgroundColor: '#ED9121',
+                    color: 'white',
+                    text: '取消',
+                    onPress: () => {alert('取消')}
+                }
+            ]
         }
     }
 
@@ -50,7 +58,8 @@ class CollectionItem extends React.Component {
         return (
             <Swipeout autoClose={true}
                       close={!(this.state.rowID === item.id)}
-                      right={this.state.Rightbuttons}
+                      right={this.state.rightButtons}
+                      left={this.state.leftButtons}
                       style={{backgroundColor: gColor.backgroundColor}}
                       onOpen={() => {
                           this.setState({

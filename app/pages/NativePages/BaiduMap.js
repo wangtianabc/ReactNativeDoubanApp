@@ -9,10 +9,8 @@ import {
 import {
     MapView,
     MapTypes,
-    MapModule,
+    Geolocation,
 } from 'react-native-baidu-map'
-
-const Geolocation = require('Geolocation')
 
 class BaiduMap extends React.Component {
     static navigationOptions = ({navigation}) => ({
@@ -31,37 +29,22 @@ class BaiduMap extends React.Component {
     }
 
     componentWillMount() {
-        Geolocation.getCurrentPosition(
-            location => {
-                this.setState({
-                    zoom: 18,
-                    markers: [{
-                        longitude: location.coords.longitude,
-                        latitude: location.coords.latitude,
-                        title: '我在这里'
-                    }],
-                    center: {
-                        longitude: location.coords.longitude,
-                        latitude: location.coords.latitude,
-                    }
-                })
-            }, error => {alert("获取位置失败："+ error)}
-        )
-        /*
-        let promis = Geolocation.geocode('北京', '鲁谷路').then((data) => {
+        Geolocation.getCurrentPosition().then(position => {
             this.setState({
                 zoom: 18,
-                markers: [{
-                    longitude: parseFloat(data.longitude),
-                    latitude: parseFloat(data.latitude),
-                    title: 'I am here'
-                }],
                 center: {
-                    longitude: parseFloat(data.longitude),
-                    latitude: parseFloat(data.latitude),
-                }
+                    longitude: position.longitude,
+                    latitude: position.latitude
+                },
+                markers: [
+                    {
+                        longitude: position.longitude,
+                        latitude: position.latitude,
+                        title: `我的位置: ${position.address}`
+                    }
+                ]
             })
-        }).catch((error) => {console.warn(error)})*/
+        }).catch(err => {alert('获取位置信息失败！' + err)})
     }
 
     render() {
