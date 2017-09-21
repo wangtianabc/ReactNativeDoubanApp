@@ -4596,6 +4596,22 @@ tar@^2.2.1:
     fstream "^1.0.2"
     inherits "2"
 
+tcomb-form-native@^0.6.9:
+  version "0.6.9"
+  resolved "http://registry.npm.taobao.org/tcomb-form-native/download/tcomb-form-native-0.6.9.tgz#12a9cdf40472c922b57ddb651215dfcd442c4af5"
+  dependencies:
+    tcomb-validation "^3.0.0"
+
+tcomb-validation@^3.0.0:
+  version "3.4.1"
+  resolved "http://registry.npm.taobao.org/tcomb-validation/download/tcomb-validation-3.4.1.tgz#a7696ec176ce56a081d9e019f8b732a5a8894b65"
+  dependencies:
+    tcomb "^3.0.0"
+
+tcomb@^3.0.0:
+  version "3.2.24"
+  resolved "http://registry.npm.taobao.org/tcomb/download/tcomb-3.2.24.tgz#7f427053cc393b5997c4c3d859ca20411180887b"
+
 temp@0.8.3:
   version "0.8.3"
   resolved "http://registry.npm.taobao.org/temp/download/temp-0.8.3.tgz#e0c6bc4d26b903124410e4fed81103014dfc1f59"

@@ -13,6 +13,8 @@ import AnimatedDemo from '../pages/Animated/Demo1'
 import CameraPage from '../pages/NativePages/CameraPlus'
 import Location from '../pages/NativePages/BaiduMap'
 import CollectionList from '../pages/myPages/CollectionList'
+import UserInfo from '../pages/myPages/UserInfo'
+import Login from '../pages/myPages/Login'
 
 const MainScreenNavigator = TabNavigator(
     {
@@ -93,6 +95,12 @@ const App = StackNavigator(
         },
         CollectionList: {
             screen: CollectionList
+        },
+        UserInfo: {
+            screen: UserInfo
+        },
+        Login: {
+            screen: Login
         }
     },
     {
