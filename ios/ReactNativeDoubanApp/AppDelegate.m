@@ -14,13 +14,14 @@
 #import <React/RCTRootView.h>
 #import <React/RCTLinkingManager.h>
 #import <SplashScreen.h>
+#import "RCTBaiduMapViewManager.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   NSURL *jsCodeLocation;
-
+  [RCTBaiduMapViewManager initSDK:@"BOt95KqP3BEVMAOFXgAW32WG1oC2dEzh"];
   
 #ifdef DEBUG
     jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
@@ -39,6 +40,7 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
   [SplashScreen show];
   return YES;
 }
