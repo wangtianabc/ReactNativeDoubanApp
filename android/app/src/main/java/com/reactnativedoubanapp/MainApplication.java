@@ -14,6 +14,7 @@ import com.microsoft.codepush.react.CodePush;
 import com.theweflex.react.WeChatPackage;
 import org.lovebing.reactnative.baidumap.BaiduMapPackage;
 import org.pgsqlite.SQLitePluginPackage;
+import com.imagepicker.ImagePickerPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -40,6 +41,7 @@ public class MainApplication extends Application implements ReactApplication {
           new BaiduMapPackage(getApplicationContext()),
           new SQLitePluginPackage(),
 		  new WeChatPackage(),
+		  new ImagePickerPackage(),
           new RCTCameraPackage(),
           new VectorIconsPackage(),
 		  new CodePush(BuildConfig.CODEPUSH_KEY, MainApplication.this, BuildConfig.DEBUG)

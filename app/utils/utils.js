@@ -49,3 +49,40 @@ export const formatStringWithHtml = (originString) => {
         .replace(/&gt;/g, '>')
     return newString
 }
+
+/**
+ * 时间格式化
+ */
+export const formatDatebox = (value, formatStr) => {
+    if (value === null || value === '') {
+        return ''
+    }
+    var dt
+    if (value instanceof Date) {
+        dt = value
+    } else {
+        dt = new Date(value)
+    }
+    return formateDate(dt, formatStr)
+}
+
+const formateDate = (dt, format) => {
+    var o = {
+        'M+': dt.getMonth() + 1,
+        'd+': dt.getDate(),
+        'h+': dt.getHours(),
+        'm+': dt.getMinutes(),
+        's+': dt.getSeconds(),
+        'q+': Math.floor((dt.getMonth() + 3) / 3),
+        'S': dt.getMilliseconds()
+    }
+    if (/(y+)/.test(format)) {
+        format = format.replace(RegExp.$1, (dt.getFullYear() + '').substr(4 - RegExp.$1.length))
+    }
+    for (var k in o) {
+        if (new RegExp('(' + k + ')').test(format)) {
+            format = format.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (('00' + o[k]).substr(('' + o[k]).length)))
+        }
+    }
+    return format
+}

@@ -15,7 +15,7 @@ const HotItemCell = ({ item, onPressHandler, onSaveMovie }) => (
         </View>
         <View style={{flex: 2, alignItems: 'flex-start'}}>
             <Text style={styles.title}>
-                {item.title}
+                {item.title.length > 10 ? item.title.substr(0,6) + '...' : item.title}
             </Text>
             <View style={{marginTop: 3, marginBottom: 3}}>
                 <Star value={item.rating.stars}/>

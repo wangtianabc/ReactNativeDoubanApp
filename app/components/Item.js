@@ -38,7 +38,7 @@ export default class Item extends React.Component {
     }
 
     renderContent = () => {
-        let { icon, iconSize, name, subName, color, first, avatar, disable, font } = this.props
+        let { icon, iconSize, name, subName, color, first, avatar, disable, font, url } = this.props
         font = font || "Ionicons"
         const Icon = Font[font]
         return (
@@ -48,7 +48,7 @@ export default class Item extends React.Component {
                     <View style={{flex: 1}}><Text>{name}</Text></View>
                     <View style={styles.listInfoRight}>
                         {subName ? <Text style={{color: '#aaa', fontSize: 12}}>{subName}</Text> : null}
-                        {avatar ? <Image source={avatar} style={{width: 36, height: 36, resizeMode: 'cover', overflow:"hidden", borderRadius: 18}} /> : null}
+                        {avatar ? <Image source={url === '' ? avatar: {uri: url}} style={{width: 36, height: 36, resizeMode: 'cover', overflow:"hidden", borderRadius: 18}} /> : null}
                         {disable ? null : <Font.Ionicons style={{marginLeft: 10}} name="ios-arrow-forward-outline" size={px2dp(18)} color="#bbb"/>}
                     </View>
                 </View>
