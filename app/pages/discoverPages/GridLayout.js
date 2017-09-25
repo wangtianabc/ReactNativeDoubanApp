@@ -4,10 +4,11 @@ import {
     View,
     SectionList,
     Text,
-    TouchableOpacity
+    TouchableOpacity,
+    Linking
 } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
-import SQLite from '../../db/SQLite'
+//import SQLite from '../../db/SQLite'
 
 class Row extends React.Component {
     rowClick = () =>{
@@ -20,11 +21,29 @@ class Row extends React.Component {
         }else if(name === '位置'){
             navigate('Location')
         }else if(name === '存储'){
-            let sqlite = new SQLite()
-            sqlite.open()
+            //let sqlite = new SQLite()
+            //sqlite.open()
+        }else if(name === '电话') {
+            this.linkingNative('tel:12345678910')
+        }else if (name === '短信') {
+            this.linkingNative('smsto:12345678910')
+        }else if (name === '邮件') {
+            this.linkingNative('mailto:37117094@qq.com')
+        }else if (name === '网页') {
+            this.linkingNative('https://www.baidu.com')
         }else{
             alert(name)
         }
+    }
+
+    linkingNative = (url) => {
+        Linking.canOpenURL(url).then(supported => {
+            if(supported) {
+                Linking.openURL(url)
+            }else {
+                console.log('not support this linking')
+            }
+        })
     }
     render(){
         return(
@@ -70,7 +89,10 @@ class GridLayout extends React.PureComponent{
                       {name: '同城', icon: 'md-locate'}, {name: '用户', icon: 'ios-people'},
                       {name: '日记', icon: 'md-paper'}, {name: '相册', icon: 'md-photos'},
                       {name: '其他', icon: 'ios-more'},{name: '存储', icon: 'ios-more'}]
-        let group2 = [{name:'相机', icon: 'md-camera'}, {name: '位置', icon: 'md-pin'}, {name: '通讯录', icon: 'md-bookmarks'}, {name: '动画', icon: 'md-analytics'}, {name: '其他', icon: 'ios-more'}]
+        let group2 = [{name: '电话', icon: 'md-call'}, {name: '短信', icon: 'md-chatbubbles'},
+                      {name: '邮件', icon: 'md-mail'}, {name:'网页', icon: 'md-globe'}, {name:'相机', icon: 'md-camera'},
+                      {name: '位置', icon: 'md-pin'}, {name: '通讯录', icon: 'md-bookmarks'},
+                      {name: '动画', icon: 'md-analytics'}, {name: '其他', icon: 'ios-more'}]
         let group3 = [{name:'微信', icon: 'ios-chatbubbles'}, {name: '余额', icon: 'md-card'}, {name: '朋友圈', icon: 'md-aperture'}, {name: '收藏', icon: 'md-folder-open'}, {name: '其他', icon: 'ios-more'}]
         //这里面的data属性后面跟数组，是为了在布局renderItem的时候可以传入的参数item是数组，而不是data1这个对象
         this.state = {

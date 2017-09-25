@@ -1,5 +1,5 @@
 import React from 'react'
-import { Platform } from 'react-native'
+import { Platform, Linking } from 'react-native'
 import { Android_Key, IOS_Key } from '../constans/Url'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -53,6 +53,12 @@ class HomeContainer extends React.Component {
     }
 
     componentDidMount(){
+        let url = Linking.getInitialURL().then((url) => {
+            if (url) {
+                console.log('Initial url is: ' + url)
+            }
+        }).catch(err => console.error('An error occurred', err))
+
         sqlite.createTable() //打开并创建表
         SplashScreen.hide()
         this.props.navigation.setParams({ onMenu: this.showMenu })

@@ -6,6 +6,7 @@ import {
     StyleSheet,
     ScrollView,
     Dimensions,
+    TouchableOpacity,
     TouchableWithoutFeedback,
     TouchableNativeFeedback,
     TouchableHighlight,
@@ -26,6 +27,7 @@ class Profile extends React.Component {
         super(props)
         this.state = {
             isRefreshing: false,
+            disabled: false
         }
         this.config = [
             {icon:"ios-pin", name:"我的地址"},
@@ -51,6 +53,7 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
+        this.timer && clearTimeout(this.timer)
         const { loginAction } = this.props
         sqlite.getCollectionList().then(result => {
             if(result.length > 0) {
@@ -59,9 +62,14 @@ class Profile extends React.Component {
         })
     }
 
-    goUserInfo = () => {
+    goUserInfo = async() => {
         const { navigate } = this.props.navigation
         navigate('UserInfo')
+
+        await this.setState({disabled: true})
+        this.timer = setTimeout(async()=>{
+            await this.setState({disabled:false})//1.5秒后可点击
+        },15000)
     }
 
     onPressItem = (name) => {
@@ -111,7 +119,7 @@ class Profile extends React.Component {
                 >
                     <View style={{minHeight: height - 64 - px2dp(46), backgroundColor: "#f3f3f3"}}>
                         { Platform.OS === 'ios' ? (<TouchableHighlight onPress={this.goUserInfo}>{this.renderHeader()}</TouchableHighlight>):
-                            (<TouchableNativeFeedback onPress={this.goUserInfo}>{this.renderHeader()}</TouchableNativeFeedback>) }
+                            (<TouchableNativeFeedback disabled={this.state.disabled} onPress={this.goUserInfo}>{this.renderHeader()}</TouchableNativeFeedback>) }
                         <View style={styles.numbers}>
                             <TouchableWithoutFeedback>
                                 <View style={[styles.numberItem, {borderTopWidth: 1, borderTopColor: "#f5f5f5"}]}>
