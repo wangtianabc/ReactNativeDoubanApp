@@ -66,6 +66,7 @@ class Profile extends React.Component {
         const { navigate } = this.props.navigation
         navigate('UserInfo')
 
+        //避免重复跳转
         await this.setState({disabled: true})
         this.timer = setTimeout(async()=>{
             await this.setState({disabled:false})//1.5秒后可点击
